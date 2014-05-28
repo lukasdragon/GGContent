@@ -42,13 +42,18 @@ public class Glggcontent
     
     //ingots
     public static Item itemLukasIngot;
+    public static Item itemAkermaniteIngot;
+    public static Item itemNiobiumIngot;
     public static Item itemSpheneIngot;
+    public static Item itemStibniteIngot;
+    public static Item itemGodlyMetal;
+    
     //items
     public static Item itemGlggDollar;
     public static Item itemSpheneCog;
     public static Item itemIronWasher;
     public static Item itemIronDisc;
-    public static Item itemGodlyMetal;
+    
     
     
     //ores
@@ -62,7 +67,8 @@ public class Glggcontent
     //Blocks
     public static Block blockLukasBlock;
     public static Block blockSpheneBlock;
-    public static Block blockLifeBlock;    
+    public static Block blockLifeBlock;  
+    public static Block blockBarkBlock;
     //Fuels
     public static Item itemTreePitch;
     public static Item itemDiamondCoal;
@@ -96,6 +102,15 @@ public class Glggcontent
     	
     	itemSpheneIngot = new NCItems().setUnlocalizedName("SpheneIngot");
     	GameRegistry.registerItem(itemSpheneIngot, "SpheneIngot");
+    	
+    	itemNiobiumIngot = new NCItems().setUnlocalizedName("NiobiumIngot");
+    	GameRegistry.registerItem(itemNiobiumIngot, "NiobiumIngot");
+    	
+    	itemStibniteIngot = new NCItems().setUnlocalizedName("StibniteIngot");
+    	GameRegistry.registerItem(itemStibniteIngot, "StibniteIngot");
+    	    	
+    	itemAkermaniteIngot = new NCItems().setUnlocalizedName("AkermaniteIngot");
+    	GameRegistry.registerItem(itemAkermaniteIngot, "AkermaniteIngot");
     	
     	//Items
     	itemGlggDollar = new NCItems().setUnlocalizedName("GlggDollar");
@@ -147,6 +162,9 @@ public class Glggcontent
     	blockLifeBlock = new LifeBlock(Material.lava).setBlockName("LifeBlock");
     	GameRegistry.registerBlock(blockLifeBlock, "LifeBlock");
     	
+    	blockBarkBlock = new BarkBlock(Material.wood).setBlockName("BarkBlock");
+    	GameRegistry.registerBlock(blockBarkBlock, "BarkBlock");
+    	
     	
     	
     	//Metal Blocks    	
@@ -155,6 +173,8 @@ public class Glggcontent
     	
     	blockSpheneBlock = new MetalBlock(Material.iron).setBlockName("SpheneBlock");
     	GameRegistry.registerBlock(blockSpheneBlock, "SpheneBlock");
+    	
+    	
     	//Ores
     	oreLukasOre = new OreBlock(Material.rock).setBlockName("LukasOre");
     	GameRegistry.registerBlock(oreLukasOre, "LukasOre");

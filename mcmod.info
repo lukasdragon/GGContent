@@ -1,14 +1,14 @@
 [
 {
-  "modid": "donorcapes",
-  "name": "GLGG Content",
-  "description": "The GLGG Server Content Pack",
+  "modid": "ggcontent",
+  "name": "GG Content",
+  "description": "GoodGamer's official Server Content Pack",
   "version": "${version}",
   "mcversion": "${mcversion}",
   "url": "",
   "updateUrl": "",
   "authors": ["LukasDragon"],
-  "credits": "Nathan Whitney for helping me with setting up forge",
+  "credits": "",
   "logoFile": "",
   "screenshots": [],
   "dependencies": []

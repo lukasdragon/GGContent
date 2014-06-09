@@ -1,0 +1,55 @@
+itemGroup.GLGG Content=§cGLGG Content
+
+tile.LukasOre.name=Lukas Ore
+
+item.LukasIngot.name=Lukas Ingot
+
+item.SpheneIngot.name=Sphene Ingot
+
+item.NiobiumIngot.name=Niobium Ingot
+
+item.StibniteIngot.name=Stibnite Ingot
+item.AkermaniteIngot.name=Åkermanite Ingot
+
+item.GlggDollar.name=1 ₲
+
+item.SpheneCog.name=Sphene Cog
+
+item.TreePitch.name=Tree Pitch
+
+item.DiamondCoal.name=Diamond Coal
+
+item.IronWasher.name=Iron Washer
+item.IronDisc.name=Iron Disc
+item.IronHammer.name=Iron Hammer
+item.IronPunch.name=Iron Punch
+item.MoneyPress.name=Money Press
+item.IronCoin.name=Coin
+item.GoldDisc.name=Gold Disc
+item.GoldCoin.name=Coin
+
+item.LukasPickaxe.name=Lukas Pickaxe
+item.LukasAxe.name=Lukas Axe
+item.LukasSword.name=Lukas Sword
+item.LukasShovel.name=Lukas Shovel
+item.LukasHoe.name=Lukas Hoe
+tile.LukasBlock.name=Block of Lukas
+
+tile.LifeBlock.name=§6Life
+
+tile.AlabasterOvenIdle.name=Alabaster Oven
+tile.AlabasterOvenActive.name=Alabaster Oven
+container.alabasterOven=Alabaster Oven
+
+tile.GodOre.name=§6Godly Stone
+item.GodlyMetal.name=§6Godly Metal
+
+tile.AkermaniteOre.name=Åkermanite Ore
+
+tile.NiobiumOre.name=Niobium Ore
+
+tile.StibniteOre.name=Stibnite Ore
+
+tile.SpheneOre.name=Sphene Ore
+
+tile.SpheneBlock.name=Block of Sphene

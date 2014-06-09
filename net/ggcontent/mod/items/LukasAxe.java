@@ -10,7 +10,7 @@ public class LukasAxe extends ItemAxe {
 
 	public LukasAxe(ToolMaterial arg0) {
 		super(arg0);
-		this.setCreativeTab(Ggcontent.GLGGTab);
+		this.setCreativeTab(Ggcontent.GGTab);
 	}
 @SideOnly(Side.CLIENT)
 public void registerIcons(IIconRegister iconRegister) {

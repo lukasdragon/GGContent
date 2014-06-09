@@ -13,7 +13,7 @@ public class LifeBlock extends Block{
 		super(material);
 		
 		this.setStepSound(soundTypePiston);
-		this.setCreativeTab(Ggcontent.GLGGTab);
+		this.setCreativeTab(Ggcontent.GGTab);
 		this.setHardness(3.0F);
 		this.setResistance(5.0F);
 			}

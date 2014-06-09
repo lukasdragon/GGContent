@@ -1,4 +1,4 @@
-itemGroup.GLGG Content=§cGLGG Content
+itemGroup.GG Content=§cGG Content
 
 tile.LukasOre.name=Lukas Ore
 
@@ -53,3 +53,9 @@ tile.StibniteOre.name=Stibnite Ore
 tile.SpheneOre.name=Sphene Ore
 
 tile.SpheneBlock.name=Block of Sphene
+
+item.AlabasterIron.name=Alabaster Iron
+
+tile.AlabasterOre.name=Alabaster Ore
+
+item.AlabasterGem.name=Alabaster Gems

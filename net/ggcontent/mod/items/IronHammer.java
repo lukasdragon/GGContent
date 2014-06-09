@@ -13,7 +13,7 @@ public class IronHammer extends Item{
 		this.maxStackSize = 1;
 		this.setMaxDamage(64);
 		this.setNoRepair();
-		this.setCreativeTab(Ggcontent.GLGGTab);
+		this.setCreativeTab(Ggcontent.GGTab);
 	}
 	@SideOnly(Side.CLIENT)
 	public void registerIcons(IIconRegister iconRegister) {

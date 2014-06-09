@@ -44,7 +44,7 @@ import cpw.mods.fml.relauncher.SideOnly;
 public class Ggcontent
 {
     public static final String MODID = "ggcontent";
-    public static final String VERSION = "ALPHA 3.3";
+    public static final String VERSION = "ALPHA 4.0";
     
     
     GgWorldGen eventWorldGen = new GgWorldGen();
@@ -52,7 +52,7 @@ public class Ggcontent
     
     
     
-    public static CreativeTabs GLGGTab;
+    public static CreativeTabs GGTab;
     
     public static ToolMaterial LukasMaterial = EnumHelper.addToolMaterial("LukasMaterial", 2, 500, 8.0F, 2.0F, 14);
     
@@ -66,6 +66,8 @@ public class Ggcontent
     public static Item itemSpheneIngot;
     public static Item itemStibniteIngot;
     public static Item itemGodlyMetal;
+    public static Item itemAlabasterGem;
+    
     
     //items
     public static Item itemGlggDollar;
@@ -75,6 +77,7 @@ public class Ggcontent
     public static Item itemIronCoin;
     public static Item itemGoldDisc;
     public static Item itemGoldCoin;
+    public static Item itemAlabasterIron;
     
     
     
@@ -85,6 +88,7 @@ public class Ggcontent
     public static Block oreSpheneOre;
     public static Block oreStibniteOre;
     public static Block oreGodOre;
+    public static Block oreAlabasterOre;
     
     //Blocks
     public static Block blockLukasBlock;
@@ -117,7 +121,7 @@ public class Ggcontent
     
     	GameRegistry.registerWorldGenerator(eventWorldGen, 0);
     	
-    	GLGGTab = new CreativeTabs("GLGG Content") {
+    	GGTab = new CreativeTabs("GG Content") {
     		@SideOnly(Side.CLIENT)
     		public Item getTabIconItem() {
     			return Item.getItemFromBlock(oreLukasOre);
@@ -140,6 +144,9 @@ public class Ggcontent
     	itemAkermaniteIngot = new NCItems().setUnlocalizedName("AkermaniteIngot");
     	GameRegistry.registerItem(itemAkermaniteIngot, "AkermaniteIngot");
     	
+    	itemAlabasterGem = new NCItems().setUnlocalizedName("AlabasterGem");
+    	GameRegistry.registerItem(itemAlabasterGem, "AlabasterGem");
+    	
     	//Items
     	itemGlggDollar = new NCItems().setUnlocalizedName("GlggDollar");
     	GameRegistry.registerItem(itemGlggDollar, "GlggDollar");
@@ -152,6 +159,9 @@ public class Ggcontent
     	
     	itemIronCoin = new NCItems().setUnlocalizedName("IronCoin");
     	GameRegistry.registerItem(itemIronCoin, "IronCoin");
+    	    	
+    	itemAlabasterIron = new NCItems().setUnlocalizedName("AlabasterIron");
+    	GameRegistry.registerItem(itemAlabasterIron, "AlabasterIron");
     	
     	itemGoldCoin = new NCItems().setUnlocalizedName("GoldCoin");
     	GameRegistry.registerItem(itemGoldCoin, "GoldCoin");
@@ -208,7 +218,7 @@ public class Ggcontent
     	GameRegistry.registerBlock(blockBarkBlock, "BarkBlock");
     	
     	//Machines
-    	blockAlabasterOvenIdle = new AlabasterOven(false).setBlockName("AlabasterOvenIdle").setCreativeTab(GLGGTab).setHardness(3.5F);
+    	blockAlabasterOvenIdle = new AlabasterOven(false).setBlockName("AlabasterOvenIdle").setCreativeTab(GGTab).setHardness(3.5F);
     	GameRegistry.registerBlock(blockAlabasterOvenIdle, "AlabasterOvenIdle");
     	
     	blockAlabasterOvenActive = new AlabasterOven(true).setBlockName("AlabasterOvenActive").setLightLevel(0.625F).setHardness(3.5F);
@@ -240,6 +250,9 @@ public class Ggcontent
     	
     	oreGodOre = new OreBlock(Material.rock).setBlockName("GodOre");
     	GameRegistry.registerBlock(oreGodOre, "GodOre");
+    	
+    	oreAlabasterOre = new OreBlock(Material.rock).setBlockName("AlabasterOre");
+    	GameRegistry.registerBlock(oreAlabasterOre, "AlabasterOre");
     
     	
     }
@@ -260,6 +273,10 @@ public class Ggcontent
     	//Recipes
     	GameRegistry.addRecipe(new ItemStack(blockLukasBlock), new Object[]{"CCC", "CCC", "CCC", 'C' ,itemLukasIngot});
     	GameRegistry.addRecipe(new ItemStack(itemSpheneCog, 4), new Object[]{" X ", "XFX", " X ", 'X', itemSpheneIngot, 'F', Items.flint});
+    	GameRegistry.addRecipe(new ItemStack(blockAlabasterOvenIdle, 1), new Object[]{"ADA", "A A", "AAA", 'A', itemAlabasterIron, 'D', Items.diamond});
+    	
+    	
+    	
     	GameRegistry.addRecipe(new ItemStack(itemIronDisc, 4), new Object[]{"IH", 'I', Items.iron_ingot, 'H', new ItemStack(itemIronHammer, 1, OreDictionary.WILDCARD_VALUE)});
     	GameRegistry.addRecipe(new ItemStack(itemIronWasher, 1), new Object[]{"DP", 'D', itemIronDisc, 'P', new ItemStack(itemIronPunch, 1, OreDictionary.WILDCARD_VALUE)});
     	GameRegistry.addRecipe(new ItemStack(itemIronCoin, 1), new Object[]{"DM", 'D', itemIronDisc, 'M', new ItemStack(itemMoneyPress, 1, OreDictionary.WILDCARD_VALUE)});
@@ -274,7 +291,7 @@ public class Ggcontent
     	
     	GameRegistry.addShapelessRecipe(new ItemStack(itemLukasIngot, 9), new Object[]{blockLukasBlock});
     	GameRegistry.addShapelessRecipe(new ItemStack(itemDiamondCoal, 2), new Object[]{Items.coal, Items.diamond});
-    	
+    	GameRegistry.addShapelessRecipe(new ItemStack(itemAlabasterIron, 1), new Object[]{itemAlabasterGem, Items.iron_ingot});
     	
     	
     	
@@ -284,6 +301,7 @@ public class Ggcontent
     	GameRegistry.addSmelting(oreNiobiumOre, new ItemStack(itemNiobiumIngot), 20);
     	GameRegistry.addSmelting(oreAkermaniteOre, new ItemStack(itemAkermaniteIngot), 20);
     	GameRegistry.addSmelting(oreStibniteOre, new ItemStack(itemStibniteIngot), 20);
+    	GameRegistry.addSmelting(oreAlabasterOre, new ItemStack(itemAlabasterGem), 20);
     	
     	    }
     

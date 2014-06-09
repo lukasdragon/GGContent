@@ -20,11 +20,11 @@ public  class GgWorldGen implements IWorldGenerator {
 				generateSurface(world, random, chunkX*16,chunkZ*16);
 				
 		case -1 :
-			//Generate Our Surface World
+			//Generate Our Nether World
 				generateNether(world, random, chunkX*16,chunkZ*16);
 				
 		case 1 :
-			//Generate Our Surface World
+			//Generate Our End World
 				generateEnd(world, random, chunkX*16,chunkZ*16);
 			
 		}
@@ -43,7 +43,8 @@ public  class GgWorldGen implements IWorldGenerator {
 		this.addOreSpawn(Ggcontent.oreNiobiumOre, world, random, x, z, 16, 16, 4+random.nextInt(6), 25, 38, 100);
 		this.addOreSpawn(Ggcontent.oreSpheneOre, world, random, x, z, 16, 16, 4+random.nextInt(6), 25, 38, 100);
 		this.addOreSpawn(Ggcontent.oreStibniteOre, world, random, x, z, 16, 16, 4+random.nextInt(6), 25, 38, 100);
-		this.addOreSpawn(Ggcontent.oreGodOre, world, random, x, z, 16, 16, 4+random.nextInt(6), 10, 38, 100);
+		this.addOreSpawn(Ggcontent.oreGodOre, world, random, x, z, 16, 16, 4+random.nextInt(6), 10, 10, 100);
+		this.addOreSpawn(Ggcontent.oreAlabasterOre, world, random, x, z, 16, 16, 4+random.nextInt(6), 25, 38, 100);
 			}
 
 

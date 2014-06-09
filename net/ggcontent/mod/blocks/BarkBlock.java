@@ -13,7 +13,7 @@ public class BarkBlock extends Block{
 		super(material);
 		
 		this.setStepSound(soundTypeWood);
-		this.setCreativeTab(Ggcontent.GLGGTab);
+		this.setCreativeTab(Ggcontent.GGTab);
 		
 					}
 	@SideOnly(Side.CLIENT)

@@ -10,7 +10,7 @@ public class NCItems extends Item{
 
 	public NCItems() {
 				getCreativeTab();
-				this.setCreativeTab(Ggcontent.GLGGTab);
+				this.setCreativeTab(Ggcontent.GGTab);
 	}
 	
 	@SideOnly(Side.CLIENT)

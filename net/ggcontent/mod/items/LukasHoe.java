@@ -10,7 +10,7 @@ public class LukasHoe extends ItemHoe {
 
 	public LukasHoe(ToolMaterial p_i45343_1_) {
 		super(p_i45343_1_);
-		this.setCreativeTab(Ggcontent.GLGGTab);
+		this.setCreativeTab(Ggcontent.GGTab);
 	}
 @SideOnly(Side.CLIENT)
 public void registerIcons(IIconRegister iconRegister) {

@@ -6,6 +6,7 @@ import net.ggcontent.mod.blocks.LifeBlock;
 import net.ggcontent.mod.blocks.MetalBlock;
 import net.ggcontent.mod.blocks.ObsidianBlock;
 import net.ggcontent.mod.blocks.OreBlock;
+import net.ggcontent.mod.crafting.RecipeRemover;
 import net.ggcontent.mod.handler.CraftingHandler;
 import net.ggcontent.mod.handler.FuelHandler;
 import net.ggcontent.mod.handler.GuiHandler;
@@ -70,6 +71,7 @@ public class Ggcontent
     public static Item itemStibniteIngot;
     public static Item itemGodlyMetal;
     public static Item itemAlabasterGem;
+    public static Item itemSteelIngot;
     
     
     //items
@@ -152,6 +154,11 @@ public class Ggcontent
     	
     	itemAlabasterGem = new NCItems().setUnlocalizedName("AlabasterGem");
     	GameRegistry.registerItem(itemAlabasterGem, "AlabasterGem");
+    	
+    	itemSteelIngot = new NCItems().setUnlocalizedName("SteelIngot");
+    	GameRegistry.registerItem(itemSteelIngot, "SteelIngot");
+    	
+    	
     	
     	//Items
     	itemGlggDollar = new NCItems().setUnlocalizedName("GlggDollar");
@@ -283,10 +290,12 @@ public class Ggcontent
     	GameRegistry.registerFuelHandler(new FuelHandler());
     	
     	//Recipes
+    	RecipeRemover.removeRecipe();
+    	
     	GameRegistry.addRecipe(new ItemStack(blockLukasBlock), new Object[]{"CCC", "CCC", "CCC", 'C' ,itemLukasIngot});
     	GameRegistry.addRecipe(new ItemStack(itemSpheneCog, 4), new Object[]{" X ", "XFX", " X ", 'X', itemSpheneIngot, 'F', Items.flint});
     	GameRegistry.addRecipe(new ItemStack(blockAlabasterOvenIdle, 1), new Object[]{"ADA", "A A", "AAA", 'A', itemAlabasterIron, 'D', Items.diamond});
-    	
+    	GameRegistry.addRecipe(new ItemStack(Items.book, 2), new Object[]{"LLL", "PPP", "LLL", 'L', Items.leather, 'P', Items.paper});
     	
     	
     	GameRegistry.addRecipe(new ItemStack(itemIronDisc, 4), new Object[]{"IH", 'I', Items.iron_ingot, 'H', new ItemStack(itemIronHammer, 1, OreDictionary.WILDCARD_VALUE)});
@@ -294,6 +303,7 @@ public class Ggcontent
     	GameRegistry.addRecipe(new ItemStack(itemIronCoin, 1), new Object[]{"DM", 'D', itemIronDisc, 'M', new ItemStack(itemMoneyPress, 1, OreDictionary.WILDCARD_VALUE)});
     	GameRegistry.addRecipe(new ItemStack(itemGoldDisc, 4), new Object[]{"GH", 'G', Items.gold_ingot, 'H', new ItemStack(itemIronHammer, 1, OreDictionary.WILDCARD_VALUE)});
     	GameRegistry.addRecipe(new ItemStack(itemGoldCoin, 1), new Object[]{"HM", 'H', itemGoldDisc, 'M', new ItemStack(itemMoneyPress, 1, OreDictionary.WILDCARD_VALUE)});
+    	    	
     	
     	GameRegistry.addRecipe(new ItemStack(itemLukasSword, 1), new Object[] {" L ", " L ", " S ", 'L', itemLukasIngot, 'S', Items.stick});
     	GameRegistry.addRecipe(new ItemStack(itemLukasAxe, 1), new Object[] {"LL ", "LS ", " S ", 'L', itemLukasIngot, 'S', Items.stick});
@@ -304,7 +314,7 @@ public class Ggcontent
     	GameRegistry.addShapelessRecipe(new ItemStack(itemLukasIngot, 9), new Object[]{blockLukasBlock});
     	GameRegistry.addShapelessRecipe(new ItemStack(itemDiamondCoal, 2), new Object[]{Items.coal, Items.diamond});
     	GameRegistry.addShapelessRecipe(new ItemStack(itemAlabasterIron, 1), new Object[]{itemAlabasterGem, Items.iron_ingot});
-    	
+    	GameRegistry.addShapelessRecipe(new ItemStack(Items.flint_and_steel, 1), new Object[]{Items.flint, itemSteelIngot});
     	
     	
     	//Smelting
@@ -314,6 +324,7 @@ public class Ggcontent
     	GameRegistry.addSmelting(oreAkermaniteOre, new ItemStack(itemAkermaniteIngot), 20);
     	GameRegistry.addSmelting(oreStibniteOre, new ItemStack(itemStibniteIngot), 20);
     	GameRegistry.addSmelting(oreAlabasterOre, new ItemStack(itemAlabasterGem), 20);
+    	GameRegistry.addSmelting(Items.iron_ingot, new ItemStack(itemSteelIngot), 0);
     	
     	    }
     

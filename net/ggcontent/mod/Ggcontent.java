@@ -4,6 +4,7 @@ import net.ggcontent.mod.blocks.AlabasterOven;
 import net.ggcontent.mod.blocks.BarkBlock;
 import net.ggcontent.mod.blocks.LifeBlock;
 import net.ggcontent.mod.blocks.MetalBlock;
+import net.ggcontent.mod.blocks.ObsidianBlock;
 import net.ggcontent.mod.blocks.OreBlock;
 import net.ggcontent.mod.handler.CraftingHandler;
 import net.ggcontent.mod.handler.FuelHandler;
@@ -17,6 +18,7 @@ import net.ggcontent.mod.items.LukasShovel;
 import net.ggcontent.mod.items.LukasSword;
 import net.ggcontent.mod.items.MoneyPress;
 import net.ggcontent.mod.items.NCItems;
+import net.ggcontent.mod.proxy.CommonProxy;
 import net.ggcontent.mod.tileentity.TileEntityAlabasterOven;
 import net.ggcontent.mod.worldgen.GgWorldGen;
 import net.minecraft.block.Block;
@@ -32,6 +34,7 @@ import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.Mod.Instance;
+import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
@@ -95,6 +98,7 @@ public class Ggcontent
     public static Block blockSpheneBlock;
     public static Block blockLifeBlock;  
     public static Block blockBarkBlock;
+    public static Block blockObsidianTable;
     
     //Machines
     public static Block blockAlabasterOvenIdle;
@@ -113,7 +117,9 @@ public class Ggcontent
     public static Item itemLukasShovel;
     public static Item itemLukasHoe;
     public static Item itemLukasPickaxe;
-    //spawn
+    
+    @SidedProxy(clientSide = "net.ggcontent.mod.proxy.ClientProxy", serverSide = "net.ggcontent.mod.proxy.CommonProxy")
+    public static CommonProxy ggProxy;
     
     
     @EventHandler
@@ -124,11 +130,11 @@ public class Ggcontent
     	GGTab = new CreativeTabs("GG Content") {
     		@SideOnly(Side.CLIENT)
     		public Item getTabIconItem() {
-    			return Item.getItemFromBlock(oreLukasOre);
+    			return Item.getItemFromBlock(blockAlabasterOvenActive);
     		}
     	};
     	    	
-	   //Ingots    	
+	   //Ingot    	
     	itemLukasIngot = new NCItems().setUnlocalizedName("LukasIngot");
     	GameRegistry.registerItem(itemLukasIngot, "LukasIngot");
     	
@@ -217,6 +223,9 @@ public class Ggcontent
     	blockBarkBlock = new BarkBlock(Material.wood).setBlockName("BarkBlock");
     	GameRegistry.registerBlock(blockBarkBlock, "BarkBlock");
     	
+    	blockObsidianTable = new ObsidianBlock(Material.rock).setBlockName("ObsidianTable");
+    	GameRegistry.registerBlock(blockObsidianTable, "ObsidianTable");
+    	
     	//Machines
     	blockAlabasterOvenIdle = new AlabasterOven(false).setBlockName("AlabasterOvenIdle").setCreativeTab(GGTab).setHardness(3.5F);
     	GameRegistry.registerBlock(blockAlabasterOvenIdle, "AlabasterOvenIdle");
@@ -253,6 +262,9 @@ public class Ggcontent
     	
     	oreAlabasterOre = new OreBlock(Material.rock).setBlockName("AlabasterOre");
     	GameRegistry.registerBlock(oreAlabasterOre, "AlabasterOre");
+    	
+    	//Renderers
+    	ggProxy.registerRenderThings();
     
     	
     }

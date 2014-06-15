@@ -129,9 +129,10 @@ public class Ggcontent
     
     	GameRegistry.registerWorldGenerator(eventWorldGen, 0);
     	
+    	
     	GGTab = new CreativeTabs("GG Content") {
     		@SideOnly(Side.CLIENT)
-    		public Item getTabIconItem() {
+    		 		public Item getTabIconItem() {
     			return Item.getItemFromBlock(blockAlabasterOvenActive);
     		}
     	};

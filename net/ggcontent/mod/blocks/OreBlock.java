@@ -18,8 +18,9 @@ public class OreBlock extends Block {
 		this.setHardness(3.0F);
 		this.setResistance(5.0F);
 		this.setStepSound(soundTypeStone);
-		getCreativeTabToDisplayOn();
 		this.setCreativeTab(Ggcontent.GGTab);
+		
+		
 	}
 
 	public Item getItemDropped(int i, Random random, int j) {

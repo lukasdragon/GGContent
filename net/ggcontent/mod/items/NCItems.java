@@ -7,9 +7,10 @@ import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.item.Item;
 
 public class NCItems extends Item{
-
+	
+	
 	public NCItems() {
-				getCreativeTab();
+							
 				this.setCreativeTab(Ggcontent.GGTab);
 	}
 	

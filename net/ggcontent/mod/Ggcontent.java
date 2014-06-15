@@ -6,6 +6,7 @@ import net.ggcontent.mod.blocks.LifeBlock;
 import net.ggcontent.mod.blocks.MetalBlock;
 import net.ggcontent.mod.blocks.ObsidianBlock;
 import net.ggcontent.mod.blocks.OreBlock;
+import net.ggcontent.mod.blocks.SoftObsidianBlock;
 import net.ggcontent.mod.crafting.RecipeRemover;
 import net.ggcontent.mod.handler.CraftingHandler;
 import net.ggcontent.mod.handler.FuelHandler;
@@ -101,6 +102,7 @@ public class Ggcontent
     public static Block blockLifeBlock;  
     public static Block blockBarkBlock;
     public static Block blockObsidianTable;
+    public static Block blockSoftObsidianBlock;
     
     //Machines
     public static Block blockAlabasterOvenIdle;
@@ -234,6 +236,9 @@ public class Ggcontent
     	blockObsidianTable = new ObsidianBlock(Material.rock).setBlockName("ObsidianTable");
     	GameRegistry.registerBlock(blockObsidianTable, "ObsidianTable");
     	
+    	blockSoftObsidianBlock = new SoftObsidianBlock(Material.rock).setBlockName("SoftObsidian");
+    	GameRegistry.registerBlock(blockSoftObsidianBlock, "SoftObsidian");
+    	
     	//Machines
     	blockAlabasterOvenIdle = new AlabasterOven(false).setBlockName("AlabasterOvenIdle").setCreativeTab(GGTab).setHardness(3.5F);
     	GameRegistry.registerBlock(blockAlabasterOvenIdle, "AlabasterOvenIdle");
@@ -296,6 +301,8 @@ public class Ggcontent
     	GameRegistry.addRecipe(new ItemStack(blockLukasBlock), new Object[]{"CCC", "CCC", "CCC", 'C' ,itemLukasIngot});
     	GameRegistry.addRecipe(new ItemStack(itemSpheneCog, 4), new Object[]{" X ", "XFX", " X ", 'X', itemSpheneIngot, 'F', Items.flint});
     	GameRegistry.addRecipe(new ItemStack(blockAlabasterOvenIdle, 1), new Object[]{"ADA", "A A", "AAA", 'A', itemAlabasterIron, 'D', Items.diamond});
+    	
+    	GameRegistry.addRecipe(new ItemStack(blockObsidianTable, 1), new Object[] {"OOO", "O O", 'O', blockSoftObsidianBlock});
     	GameRegistry.addRecipe(new ItemStack(Items.book, 2), new Object[]{"LLL", "PPP", "LLL", 'L', Items.leather, 'P', Items.paper});
     	
     	
@@ -303,14 +310,18 @@ public class Ggcontent
     	GameRegistry.addRecipe(new ItemStack(itemIronWasher, 1), new Object[]{"DP", 'D', itemIronDisc, 'P', new ItemStack(itemIronPunch, 1, OreDictionary.WILDCARD_VALUE)});
     	GameRegistry.addRecipe(new ItemStack(itemIronCoin, 1), new Object[]{"DM", 'D', itemIronDisc, 'M', new ItemStack(itemMoneyPress, 1, OreDictionary.WILDCARD_VALUE)});
     	GameRegistry.addRecipe(new ItemStack(itemGoldDisc, 4), new Object[]{"GH", 'G', Items.gold_ingot, 'H', new ItemStack(itemIronHammer, 1, OreDictionary.WILDCARD_VALUE)});
+    	GameRegistry.addRecipe(new ItemStack(itemIronPunch, 1), new Object[]{"III", "III", " I ", 'I', Items.iron_ingot});
+    	GameRegistry.addRecipe(new ItemStack(itemIronHammer, 1), new Object[]{"III", " I ", " S ", 'I', Items.iron_ingot, 'S', Items.stick});
+    	GameRegistry.addRecipe(new ItemStack(itemMoneyPress, 1), new Object[]{"SSS", "SIS", " I ", 'S', Items.iron_ingot, 'S', itemSteelIngot});
+    	
     	GameRegistry.addRecipe(new ItemStack(itemGoldCoin, 1), new Object[]{"HM", 'H', itemGoldDisc, 'M', new ItemStack(itemMoneyPress, 1, OreDictionary.WILDCARD_VALUE)});
-    	    	
     	
     	GameRegistry.addRecipe(new ItemStack(itemLukasSword, 1), new Object[] {" L ", " L ", " S ", 'L', itemLukasIngot, 'S', Items.stick});
     	GameRegistry.addRecipe(new ItemStack(itemLukasAxe, 1), new Object[] {"LL ", "LS ", " S ", 'L', itemLukasIngot, 'S', Items.stick});
     	GameRegistry.addRecipe(new ItemStack(itemLukasShovel, 1), new Object[] {" L ", " S ", " S ", 'L', itemLukasIngot, 'S', Items.stick});
     	GameRegistry.addRecipe(new ItemStack(itemLukasHoe, 1), new Object[] {"LL ", " S ", " S ", 'L', itemLukasIngot, 'S', Items.stick});
     	GameRegistry.addRecipe(new ItemStack(itemLukasHoe, 1), new Object[] {" LL", " S ", " S ", 'L', itemLukasIngot, 'S', Items.stick});
+    	
     	
     	GameRegistry.addShapelessRecipe(new ItemStack(itemLukasIngot, 9), new Object[]{blockLukasBlock});
     	GameRegistry.addShapelessRecipe(new ItemStack(itemDiamondCoal, 2), new Object[]{Items.coal, Items.diamond});

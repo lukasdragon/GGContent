@@ -11,6 +11,7 @@ import net.ggcontent.mod.crafting.RecipeRemover;
 import net.ggcontent.mod.handler.CraftingHandler;
 import net.ggcontent.mod.handler.FuelHandler;
 import net.ggcontent.mod.handler.GuiHandler;
+import net.ggcontent.mod.items.GGRecord;
 import net.ggcontent.mod.items.IronHammer;
 import net.ggcontent.mod.items.IronPunch;
 import net.ggcontent.mod.items.LukasAxe;
@@ -29,6 +30,7 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.Item.ToolMaterial;
+import net.minecraft.item.ItemRecord;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.util.EnumHelper;
 import net.minecraftforge.oredict.OreDictionary;
@@ -49,7 +51,7 @@ import cpw.mods.fml.relauncher.SideOnly;
 public class Ggcontent
 {
     public static final String MODID = "ggcontent";
-    public static final String VERSION = "ALPHA 4.0";
+    public static final String VERSION = "ALPHA 5.0";
     
     
     GgWorldGen eventWorldGen = new GgWorldGen();
@@ -84,6 +86,10 @@ public class Ggcontent
     public static Item itemGoldDisc;
     public static Item itemGoldCoin;
     public static Item itemAlabasterIron;
+    
+    
+    //Records
+    public static Item itemShireRecord;
     
     
     
@@ -188,6 +194,16 @@ public class Ggcontent
     	
     	itemSpheneCog = new NCItems().setUnlocalizedName("SpheneCog");
     	GameRegistry.registerItem(itemSpheneCog, "SpheneCog");
+    	
+    	//Records
+    	
+    	
+    	itemShireRecord = new GGRecord("shire_remix").setUnlocalizedName("record").setTextureName("record_shire");
+    	GameRegistry.registerItem(itemShireRecord, "ShireRecord");
+    	 
+
+    	
+    	
     	
     	//Fuel items
     	itemTreePitch = new NCItems().setUnlocalizedName("TreePitch");

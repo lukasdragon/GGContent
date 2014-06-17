@@ -197,7 +197,7 @@ public class Ggcontent
     	GameRegistry.registerItem(itemSpheneCog, "SpheneCog");
     	
     	//Records    	
-    	itemShireRecord = new GGRecord("shireDisc");    	
+    	itemShireRecord = new GGRecord("shireDisc", "Lukas Olson", "Shire Remix, ", "shire");    	
     	
     	//Fuel items
     	itemTreePitch = new NCItems().setUnlocalizedName("TreePitch");

@@ -23,26 +23,32 @@ import net.minecraft.world.World;
 
 public class GGRecord extends ItemRecord
 {
-	public GGRecord(String name)
+	String artist;
+	String title;
+	String fileName;
+	public GGRecord(String name, String artist, String title, String fileName)
 	{
 		super("shire");
 		setUnlocalizedName(name);
 		setTextureName(name);
 		GameRegistry.registerItem(this, name);
 		setCreativeTab(Ggcontent.GGTab);
+		this.artist=artist;
+		this.title=title;
+		this.fileName=fileName;
 	}
 	
 	@Override
     @SideOnly(Side.CLIENT)
     public String getRecordNameLocal()
     {
-        return "Lukas Olson - Shire Remix";
+        return artist + " - " + title;
     }
     
     @Override
     @SideOnly(Side.CLIENT)
     public ResourceLocation getRecordResource(String name)
     {
-        return new ResourceLocation(Ggcontent.MODID, "shire");
+        return new ResourceLocation(Ggcontent.MODID, fileName);
     }
 }

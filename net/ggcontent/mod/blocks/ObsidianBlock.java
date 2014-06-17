@@ -4,6 +4,8 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.ggcontent.mod.Ggcontent;
 import net.ggcontent.mod.tileentity.TileEntityObsidianTable;
+import net.minecraft.block.Block;
+import net.minecraft.block.BlockCactus;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
@@ -46,4 +48,19 @@ public class ObsidianBlock extends BlockContainer {
 		this.blockIcon = iconRegister.registerIcon(Ggcontent.MODID + ":" + this.getUnlocalizedName().substring(5));
 	}
 
+	@Override
+    public boolean canPlaceBlockAt(World world, int x, int y, int z)
+    {
+		if(world.getBlock(x, y-1, z) != null && !world.getBlock(x, y-1, z).isOpaqueCube()){
+			return false;
+		} else return true;
+    }
+	
+    public void onNeighborBlockChange(World world, int x, int y, int z, Block block)
+    {
+        if (!this.canPlaceBlockAt(world, x, y, z))
+        {
+            world.func_147480_a(x, y, z, true);
+        }
+    }
 }

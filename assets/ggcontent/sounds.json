@@ -1,12 +1,11 @@
 {
- "records.shire_remix": {
+  "shire": {
     "category": "record",
     "sounds": [
       {
         "name": "records/shire",
         "stream": true
       }
-     ]
-    }
-   }
-   
+    ]
+  }
+}

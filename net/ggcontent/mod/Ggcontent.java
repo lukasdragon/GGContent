@@ -27,6 +27,7 @@ import net.ggcontent.mod.worldgen.GgWorldGen;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.Item.ToolMaterial;
@@ -47,7 +48,7 @@ import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-@Mod(modid = Ggcontent.MODID, version = Ggcontent.VERSION)
+@Mod(name = "Ggcontent", modid = Ggcontent.MODID, version = Ggcontent.VERSION)
 public class Ggcontent
 {
     public static final String MODID = "ggcontent";
@@ -195,15 +196,8 @@ public class Ggcontent
     	itemSpheneCog = new NCItems().setUnlocalizedName("SpheneCog");
     	GameRegistry.registerItem(itemSpheneCog, "SpheneCog");
     	
-    	//Records
-    	
-    	
-    	itemShireRecord = new GGRecord("shire_remix").setUnlocalizedName("record").setTextureName("record_shire");
-    	GameRegistry.registerItem(itemShireRecord, "ShireRecord");
-    	 
-
-    	
-    	
+    	//Records    	
+    	itemShireRecord = new GGRecord("shireDisc");    	
     	
     	//Fuel items
     	itemTreePitch = new NCItems().setUnlocalizedName("TreePitch");

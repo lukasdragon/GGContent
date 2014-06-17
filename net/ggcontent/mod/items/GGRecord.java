@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.ggcontent.mod.Ggcontent;
@@ -20,98 +21,28 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.StatCollector;
 import net.minecraft.world.World;
 
-public class GGRecord extends Item
+public class GGRecord extends ItemRecord
 {
-    private static final Map field_150928_b = new HashMap();
-    /** The name of the record. */
-    public final String recordName;
-    private static final String __OBFID = "CL_00000057";
-    
-    public static ResourceLocation sound = new ResourceLocation(Ggcontent.MODID + ":sounds/records/" + recordName + ".ogg");
-
-    public GGRecord(String p_i45350_1_)
-    {
-        this.recordName = p_i45350_1_;
-        this.maxStackSize = 1;
-        this.setCreativeTab(Ggcontent.GGTab);
-        field_150928_b.put("records." + p_i45350_1_, this); //Forge Bug Fix: RenderGlobal adds a "records." when looking up below.
-    }
-
-    /**
-     * Gets an icon index based on an item's damage value
-     */
-    @SideOnly(Side.CLIENT)
-    public IIcon getIconFromDamage(int par1)
-    {
-        return this.itemIcon;
-    }
-
-    /**
-     * Callback for item usage. If the item does something special on right clicking, he will have one of those. Return
-     * True if something happen and false if it don't. This is for ITEMS, not BLOCKS
-     */
-    public boolean onItemUse(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer, World par3World, int par4, int par5, int par6, int par7, float par8, float par9, float par10)
-    {
-        if (par3World.getBlock(par4, par5, par6) == Blocks.jukebox && par3World.getBlockMetadata(par4, par5, par6) == 0)
-        {
-            if (par3World.isRemote)
-            {
-                return true;
-            }
-            else
-            {
-                ((BlockJukebox)Blocks.jukebox).func_149926_b(par3World, par4, par5, par6, par1ItemStack);
-                par3World.playAuxSFXAtEntity((EntityPlayer)null, 1005, par4, par5, par6, Item.getIdFromItem(this));
-                --par1ItemStack.stackSize;
-                return true;
-            }
-        }
-        else
-        {
-            return false;
-        }
-    }
-
-    /**
-     * allows items to add custom lines of information to the mouseover description
-     */
-    @SideOnly(Side.CLIENT)
-    public void addInformation(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer, List par3List, boolean par4)
-    {
-        par3List.add(this.getRecordNameLocal());
-    }
-
+	public GGRecord(String name)
+	{
+		super("shire");
+		setUnlocalizedName(name);
+		setTextureName(name);
+		GameRegistry.registerItem(this, name);
+		setCreativeTab(Ggcontent.GGTab);
+	}
+	
+	@Override
     @SideOnly(Side.CLIENT)
     public String getRecordNameLocal()
     {
-        return StatCollector.translateToLocal("item.record." + this.recordName + ".desc");
+        return "Lukas Olson - Shire Remix";
     }
-
-    /**
-     * Return an item rarity from EnumRarity
-     */
-    public EnumRarity getRarity(ItemStack par1ItemStack)
-    {
-        return EnumRarity.rare;
-    }
-
-    /**
-     * Return the record item corresponding to the given name.
-     */
+    
+    @Override
     @SideOnly(Side.CLIENT)
-    public static GGRecord getRecord(String p_150926_0_)
-    {
-        return (GGRecord)field_150928_b.get(p_150926_0_);
-    }
-
-    /**
-     * Retrieves the resource location of the sound to play for this record.
-     * 
-     * @param name The name of the record to play
-     * @return The resource location for the audio, null to use default.
-     */
     public ResourceLocation getRecordResource(String name)
     {
-        return new ResourceLocation(this.sound);
+        return new ResourceLocation(Ggcontent.MODID, "shire");
     }
 }

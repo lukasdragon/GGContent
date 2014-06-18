@@ -61,6 +61,7 @@ public class Ggcontent
     
     
     public static CreativeTabs GGTab;
+    public static CreativeTabs GGRecord;
     
     public static ToolMaterial LukasMaterial = EnumHelper.addToolMaterial("LukasMaterial", 2, 500, 8.0F, 2.0F, 14);
     
@@ -91,6 +92,8 @@ public class Ggcontent
     
     //Records
     public static Item itemShireRecord;
+    public static Item itemMiracleRecord;
+    public static Item itemUniverseRecord;
     
     
     
@@ -144,6 +147,17 @@ public class Ggcontent
     		 		public Item getTabIconItem() {
     			return Item.getItemFromBlock(blockAlabasterOvenActive);
     		}
+    		
+    		
+    	};
+    	
+    	GGRecord = new CreativeTabs("GG Record") {
+    		@SideOnly(Side.CLIENT)
+    		 		public Item getTabIconItem() {
+    			return itemShireRecord;
+    		}
+    		
+    		
     	};
     	    	
 	   //Ingot    	
@@ -197,7 +211,9 @@ public class Ggcontent
     	GameRegistry.registerItem(itemSpheneCog, "SpheneCog");
     	
     	//Records    	
-    	itemShireRecord = new GGRecord("shireDisc", "Lukas Olson", "Shire Remix, ", "shire");    	
+    	itemShireRecord = new GGRecord("shireDisc", "Lukas Olson", "Shire Remix  ", "shire");    
+    	itemMiracleRecord = new GGRecord("miracleDisc", "Patti LaBelle", "Are You Ready For A Miracle?  ", "miracle");  
+    	
     	
     	//Fuel items
     	itemTreePitch = new NCItems().setUnlocalizedName("TreePitch");

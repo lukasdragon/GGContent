@@ -9,6 +9,7 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.ggcontent.mod.Ggcontent;
 import net.minecraft.block.BlockJukebox;
+import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
@@ -32,10 +33,15 @@ public class GGRecord extends ItemRecord
 		setUnlocalizedName(name);
 		setTextureName(name);
 		GameRegistry.registerItem(this, name);
-		setCreativeTab(Ggcontent.GGTab);
+		setCreativeTab(Ggcontent.GGRecord);
 		this.artist=artist;
 		this.title=title;
 		this.fileName=fileName;
+	}
+	
+	@SideOnly(Side.CLIENT)
+	public void registerIcons(IIconRegister iconRegister){
+		this.itemIcon = iconRegister.registerIcon(Ggcontent.MODID + ":" + this.getUnlocalizedName().substring(5));
 	}
 	
 	@Override

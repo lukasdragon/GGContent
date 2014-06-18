@@ -1,4 +1,5 @@
 itemGroup.GG Content=§cGG Content
+itemGroup.GG Record=GG Records
 
 tile.LukasOre.name=Lukas Ore
 
@@ -62,3 +63,6 @@ tile.AlabasterOre.name=Alabaster Ore
 item.AlabasterGem.name=Alabaster Gems
 
 tile.ObsidianTable.name=Obsidian Table
+
+item.shireDisc.name=Music Disc
+item.miracleDisc.name=Music Disc

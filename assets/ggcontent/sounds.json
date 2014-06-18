@@ -7,5 +7,23 @@
         "stream": true
       }
     ]
+  },
+  "miracle": {
+    "category": "record",
+    "sounds": [
+      {
+        "name": "records/miracle",
+        "stream": true
+      }
+    ]
+  },
+  "universe": {
+    "category": "record",
+    "sounds": [
+      {
+        "name": "records/universe",
+        "stream": true
+      }
+    ]
   }
 }

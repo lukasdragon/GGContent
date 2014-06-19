@@ -27,11 +27,9 @@ import net.ggcontent.mod.worldgen.GgWorldGen;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.Item.ToolMaterial;
-import net.minecraft.item.ItemRecord;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.util.EnumHelper;
 import net.minecraftforge.oredict.OreDictionary;
@@ -92,9 +90,7 @@ public class Ggcontent
     
     //Records
     public static Item itemShireRecord;
-    public static Item itemMiracleRecord;
-    public static Item itemUniverseRecord;
-    
+    public static Item itemMiracleRecord;   
     
     
     //ores
@@ -211,8 +207,9 @@ public class Ggcontent
     	GameRegistry.registerItem(itemSpheneCog, "SpheneCog");
     	
     	//Records    	
-    	itemShireRecord = new GGRecord("shireDisc", "Lukas Olson", "Shire Remix  ", "shire");    
-    	itemMiracleRecord = new GGRecord("miracleDisc", "Patti LaBelle", "Are You Ready For A Miracle?  ", "miracle");  
+    	itemMiracleRecord = new GGRecord("miracleDisc", "Patti LaBelle - Are You Ready For A Miracle?");  
+
+    	itemShireRecord = new GGRecord("shireDisc", "Lukas Olson - Shire Remix");    
     	
     	
     	//Fuel items

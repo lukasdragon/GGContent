@@ -16,14 +16,5 @@
         "stream": true
       }
     ]
-  },
-  "universe": {
-    "category": "record",
-    "sounds": [
-      {
-        "name": "records/universe",
-        "stream": true
-      }
-    ]
   }
 }

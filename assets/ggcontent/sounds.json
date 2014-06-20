@@ -16,5 +16,14 @@
         "stream": true
       }
     ]
+  },
+  "gaben": {
+    "category": "record",
+    "sounds": [
+      {
+        "name": "records/gaben",
+        "stream": true
+      }
+    ]
   }
 }

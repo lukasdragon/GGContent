@@ -8,7 +8,9 @@ import net.ggcontent.mod.blocks.ObsidianBlock;
 import net.ggcontent.mod.blocks.OreBlock;
 import net.ggcontent.mod.blocks.SoftObsidianBlock;
 import net.ggcontent.mod.crafting.RecipeRemover;
+import net.ggcontent.mod.entity.EntityCyclops;
 import net.ggcontent.mod.handler.CraftingHandler;
+import net.ggcontent.mod.handler.EntityHandler;
 import net.ggcontent.mod.handler.FuelHandler;
 import net.ggcontent.mod.handler.GuiHandler;
 import net.ggcontent.mod.items.GGRecord;
@@ -91,6 +93,7 @@ public class Ggcontent
     //Records
     public static Item itemShireRecord;
     public static Item itemMiracleRecord;   
+    public static Item itemGabenRecord;
     
     
     //ores
@@ -209,7 +212,10 @@ public class Ggcontent
     	//Records    	
     	itemMiracleRecord = new GGRecord("miracleDisc", "Patti LaBelle - Are You Ready For A Miracle?");  
 
-    	itemShireRecord = new GGRecord("shireDisc", "Lukas Olson - Shire Remix");    
+    	itemShireRecord = new GGRecord("shireDisc", "Lukas Olson - Shire Remix");   
+    	
+    	
+    	itemGabenRecord = new GGRecord("gabenDisc", "Mastgrr - Stop A Gaben"); 
     	
     	
     	//Fuel items
@@ -308,15 +314,6 @@ public class Ggcontent
     @EventHandler
     public void Init(FMLInitializationEvent event){
     	
-    	GameRegistry.registerTileEntity(TileEntityAlabasterOven.class, "AlabasterOven");
-    	NetworkRegistry.INSTANCE.registerGuiHandler(this, new GuiHandler());
-    }
-    
-    @EventHandler
-    public void PostInit(FMLPostInitializationEvent postEvent){
-    	
-    	FMLCommonHandler.instance().bus().register(new CraftingHandler());
-    	GameRegistry.registerFuelHandler(new FuelHandler());
     	
     	//Recipes
     	RecipeRemover.removeRecipe();
@@ -359,7 +356,32 @@ public class Ggcontent
     	GameRegistry.addSmelting(oreAkermaniteOre, new ItemStack(itemAkermaniteIngot), 20);
     	GameRegistry.addSmelting(oreStibniteOre, new ItemStack(itemStibniteIngot), 20);
     	GameRegistry.addSmelting(oreAlabasterOre, new ItemStack(itemAlabasterGem), 20);
-    	GameRegistry.addSmelting(Items.iron_ingot, new ItemStack(itemSteelIngot), 0);
+    	GameRegistry.addSmelting(Items.iron_ingot, new ItemStack(itemSteelIngot), 0);  	
+    	
+    	    	    	    	
+    	    	
+    	
+    	
+    	//Registry
+    	FMLCommonHandler.instance().bus().register(new CraftingHandler());
+    	GameRegistry.registerFuelHandler(new FuelHandler());
+    	
+    	GameRegistry.registerTileEntity(TileEntityAlabasterOven.class, "AlabasterOven");
+    	NetworkRegistry.INSTANCE.registerGuiHandler(this, new GuiHandler());
+    	
+    	//Entities
+    	EntityHandler.registerMonsters(EntityCyclops.class, "Cyclops");
+    	
+    	
+    	
+    	
+    }
+    
+    @EventHandler
+    public void PostInit(FMLPostInitializationEvent postEvent){   	
+    	
+    	
+    	
     	
     	    }
     

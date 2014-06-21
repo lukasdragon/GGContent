@@ -25,5 +25,9 @@
         "stream": true
       }
     ]
-  }
+  },  
+    "cyclops.say": {"category": "master", "sounds": ["cyclops-say1", "cyclops-say2"]},
+    "cyclops.hurt": {"category": "master", "sounds": ["cyclops-hurt", "cyclops-hurt2", "cyclops-hurt3", "cyclops-hurt4", "cyclops-hurt5", "cyclops-hurt6"]},
+    "cyclops.death": {"category": "master", "sounds": ["cyclops-death1", "cyclops-death2"]}
+
 }

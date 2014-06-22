@@ -29,6 +29,7 @@ import net.ggcontent.mod.worldgen.GgWorldGen;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.Item.ToolMaterial;
@@ -52,7 +53,7 @@ import cpw.mods.fml.relauncher.SideOnly;
 public class Ggcontent
 {
     public static final String MODID = "ggcontent";
-    public static final String VERSION = "ALPHA 5.0";
+    public static final String VERSION = "ALPHA 6.0";
     
     
     GgWorldGen eventWorldGen = new GgWorldGen();
@@ -323,6 +324,7 @@ public class Ggcontent
     	GameRegistry.addRecipe(new ItemStack(blockAlabasterOvenIdle, 1), new Object[]{"ADA", "A A", "AAA", 'A', itemAlabasterIron, 'D', Items.diamond});
     	
     	GameRegistry.addRecipe(new ItemStack(blockObsidianTable, 1), new Object[] {"OOO", "O O", 'O', blockSoftObsidianBlock});
+    	GameRegistry.addRecipe(new ItemStack(blockObsidianTable, 1), new Object[] {"OOO", "O O", 'O', Blocks.obsidian});
     	GameRegistry.addRecipe(new ItemStack(Items.book, 2), new Object[]{"LLL", "PPP", "LLL", 'L', Items.leather, 'P', Items.paper});
     	
     	
@@ -347,6 +349,8 @@ public class Ggcontent
     	GameRegistry.addShapelessRecipe(new ItemStack(itemDiamondCoal, 2), new Object[]{Items.coal, Items.diamond});
     	GameRegistry.addShapelessRecipe(new ItemStack(itemAlabasterIron, 1), new Object[]{itemAlabasterGem, Items.iron_ingot});
     	GameRegistry.addShapelessRecipe(new ItemStack(Items.flint_and_steel, 1), new Object[]{Items.flint, itemSteelIngot});
+    	GameRegistry.addShapelessRecipe(new ItemStack(blockBarkBlock, 4), new Object[]{Blocks.log, Blocks.log, Blocks.log, Blocks.log});
+    	GameRegistry.addShapelessRecipe(new ItemStack(Blocks.log, 4), new Object[]{blockBarkBlock, blockBarkBlock, blockBarkBlock, blockBarkBlock});
     	
     	
     	//Smelting

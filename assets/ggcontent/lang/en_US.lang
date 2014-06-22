@@ -38,6 +38,8 @@ item.LukasHoe.name=Lukas Hoe
 tile.LukasBlock.name=Block of Lukas
 
 tile.LifeBlock.name=§6Life
+tile.BarkBlock.name=Block Of Bark
+tile.SoftObsidian.name=Soft Obsidian
 
 tile.AlabasterOvenIdle.name=Alabaster Oven
 tile.AlabasterOvenActive.name=Alabaster Oven
@@ -66,3 +68,6 @@ tile.ObsidianTable.name=Obsidian Table
 
 item.shireDisc.name=Music Disc
 item.miracleDisc.name=Music Disc
+item.gabenDisc.name=Music Disc
+
+entity.Cyclops.name=Cyclops

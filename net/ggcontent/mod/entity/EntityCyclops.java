@@ -121,7 +121,7 @@ public class EntityCyclops extends EntityMob{
 
         for (k = 0; k < j; ++k)
         {
-            this.dropItem(Items.rotten_flesh, 4);
+            this.dropItem(Ggcontent.foodPutridBall, 1);
         }
         
         j = this.rand.nextInt(3 + par2);

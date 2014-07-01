@@ -7,7 +7,7 @@
   "mcversion": "${mcversion}",
   "url": "https://github.com/lukasdragon/GGContent",
   "updateUrl": "",
-  "authors": ["LukasDragon"],
+  "authors": [ "LukasDragon" ],
   "credits": "",
   "logoFile": "/assets/ggcontent/logo.png",
   "screenshots": [],

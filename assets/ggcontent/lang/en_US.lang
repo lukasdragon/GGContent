@@ -1,73 +1,65 @@
 itemGroup.GG Content=§cGG Content
-itemGroup.GG Record=GG Records
+itemGroup.GG Record=§aGG Records
 
-tile.LukasOre.name=Lukas Ore
 
 item.LukasIngot.name=Lukas Ingot
-item.SteelIngot.name=Steel Ingot
-
 item.SpheneIngot.name=Sphene Ingot
-
-item.NiobiumIngot.name=Niobium Ingot
-
-item.StibniteIngot.name=Stibnite Ingot
+item.NiobiumIngot.name=Nioboium Ingot
+item.StibniteIngot.name=Lukas Ingot
 item.AkermaniteIngot.name=Åkermanite Ingot
+item.AlabasterGem.name=Alabaster Crystal
+item.SteelIngot.name=Steel Ingot
+item.GodlyMetal.name=§6Godly Metal
+item.AlabasterIron.name=Alabaster Crystal
+
 
 item.GlggDollar.name=1 ₲
-
-item.SpheneCog.name=Sphene Cog
-
-item.TreePitch.name=Tree Pitch
-
-item.DiamondCoal.name=Diamond Coal
-
 item.IronWasher.name=Iron Washer
 item.IronDisc.name=Iron Disc
+item.IronCoin.name=Iron Coin
+item.GoldCoin.name=Gold Coin
+item.GoldDisc.name=Gold Disc
+item.SpheneCog.name=Sphene Cog
+
+
+item.TreePitch.name=Tree Pitch
+item.DiamondCoal.name=Diamond Coal
+
+
 item.IronHammer.name=Iron Hammer
 item.IronPunch.name=Iron Punch
 item.MoneyPress.name=Money Press
-item.IronCoin.name=Coin
-item.GoldDisc.name=Gold Disc
-item.GoldCoin.name=Coin
 
-item.LukasPickaxe.name=Lukas Pickaxe
-item.LukasAxe.name=Lukas Axe
+
 item.LukasSword.name=Lukas Sword
+item.LukasAxe.name=Lukas Axe
 item.LukasShovel.name=Lukas Shovel
 item.LukasHoe.name=Lukas Hoe
-tile.LukasBlock.name=Block of Lukas
+item.LukasPickaxe.name=Lukas Pickaxe
+
 
 tile.LifeBlock.name=§6Life
-tile.BarkBlock.name=Block Of Bark
+tile.BarkBlock.name=Bark Block
+tile.ObsidianTable.name=Obsidian Table
 tile.SoftObsidian.name=Soft Obsidian
-
 tile.AlabasterOvenIdle.name=Alabaster Oven
 tile.AlabasterOvenActive.name=Alabaster Oven
-container.alabasterOven=Alabaster Oven
 
-tile.GodOre.name=§6Godly Stone
-item.GodlyMetal.name=§6Godly Metal
 
+
+tile.LukasBlock.name=Block Of Lukas
+tile.SpheneBlock.name=Block Of Sphene
+
+
+tile.LukasOre.name=Lukas Ore
 tile.AkermaniteOre.name=Åkermanite Ore
-
 tile.NiobiumOre.name=Niobium Ore
-
+tile.spheneOre.name=Sphene Ore
 tile.StibniteOre.name=Stibnite Ore
-
-tile.SpheneOre.name=Sphene Ore
-
-tile.SpheneBlock.name=Block of Sphene
-
-item.AlabasterIron.name=Alabaster Iron
-
+tile.GodOre.name=§6Godly Stone
 tile.AlabasterOre.name=Alabaster Ore
 
-item.AlabasterGem.name=Alabaster Gems
 
-tile.ObsidianTable.name=Obsidian Table
+item.Manna.name=Manna
+item.PutridBall.name=§kPutrid Ball
 
-item.shireDisc.name=Music Disc
-item.miracleDisc.name=Music Disc
-item.gabenDisc.name=Music Disc
-
-entity.Cyclops.name=Cyclops

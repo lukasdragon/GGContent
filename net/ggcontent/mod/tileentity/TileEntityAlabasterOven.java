@@ -73,9 +73,11 @@ public class TileEntityAlabasterOven extends TileEntity implements ISidedInvento
 					this.slots[var1] = null;
 				}
 				
+				return itemstack;
 			}
+		}else{
+			return null;
 		}
-		return null;
 	}
 
 	@Override

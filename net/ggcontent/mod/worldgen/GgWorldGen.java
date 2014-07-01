@@ -38,13 +38,13 @@ public  class GgWorldGen implements IWorldGenerator {
 	
 	private void generateSurface(World world, Random random, int x, int z) {
 		//this.addOreSpawn(Ggcontent.orename, world, random, x=blockXpos, z=blockzpos, maxX, maxZ, maxVeinSize, chancetospawn, minY, maxY
-		this.addOreSpawn(Ggcontent.oreLukasOre, world, random, x, z, 16, 16, 4+random.nextInt(6), 25, 38, 100);
-		this.addOreSpawn(Ggcontent.oreAkermaniteOre, world, random, x, z, 16, 16, 4+random.nextInt(6), 25, 38, 100);
-		this.addOreSpawn(Ggcontent.oreNiobiumOre, world, random, x, z, 16, 16, 4+random.nextInt(6), 25, 38, 100);
-		this.addOreSpawn(Ggcontent.oreSpheneOre, world, random, x, z, 16, 16, 4+random.nextInt(6), 25, 38, 100);
-		this.addOreSpawn(Ggcontent.oreStibniteOre, world, random, x, z, 16, 16, 4+random.nextInt(6), 25, 38, 100);
-		this.addOreSpawn(Ggcontent.oreGodOre, world, random, x, z, 16, 16, 4+random.nextInt(6), 10, 10, 100);
-		this.addOreSpawn(Ggcontent.oreAlabasterOre, world, random, x, z, 16, 16, 4+random.nextInt(6), 25, 38, 100);
+		this.addOreSpawn(Ggcontent.oreLukasOre, world, random, x, z, 16, 16, 4+random.nextInt(6), 16, 38, 100);
+		this.addOreSpawn(Ggcontent.oreAkermaniteOre, world, random, x, z, 16, 16, 4+random.nextInt(6), 16, 38, 100);
+		this.addOreSpawn(Ggcontent.oreNiobiumOre, world, random, x, z, 16, 16, 4+random.nextInt(6), 16, 38, 100);
+		this.addOreSpawn(Ggcontent.oreSpheneOre, world, random, x, z, 16, 16, 4+random.nextInt(6), 16, 38, 100);
+		this.addOreSpawn(Ggcontent.oreStibniteOre, world, random, x, z, 16, 16, 4+random.nextInt(6), 16, 38, 100);
+		this.addOreSpawn(Ggcontent.oreGodOre, world, random, x, z, 16, 16, 4+random.nextInt(6), 14, 10, 100);
+		this.addOreSpawn(Ggcontent.oreAlabasterOre, world, random, x, z, 16, 16, 4+random.nextInt(6), 13, 38, 100);
 		this.addOreSpawn(Ggcontent.blockSoftObsidianBlock, world, random, x, z, 16, 16, 2+random.nextInt(4), 15, 10, 60);
 		
 			}

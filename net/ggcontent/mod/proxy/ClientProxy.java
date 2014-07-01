@@ -2,6 +2,7 @@ package net.ggcontent.mod.proxy;
 
 import cpw.mods.fml.client.registry.ClientRegistry;
 import cpw.mods.fml.client.registry.RenderingRegistry;
+import cpw.mods.fml.common.FMLCommonHandler;
 import net.ggcontent.mod.Ggcontent;
 import net.ggcontent.mod.entity.EntityCyclops;
 import net.ggcontent.mod.model.ModelCyclops;
@@ -17,12 +18,15 @@ import net.minecraftforge.client.MinecraftForgeClient;
 public class ClientProxy extends CommonProxy {
 
 	public void registerRenderThings() {
+		
 		//ObsidianTable
 		TileEntitySpecialRenderer render = new RenderObsidianTable();
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityObsidianTable.class, render);
 		MinecraftForgeClient.registerItemRenderer(Item.getItemFromBlock(Ggcontent.blockObsidianTable), new ItemRenderObsidianTable(render, new TileEntityObsidianTable()));
 		
+		
 		//Entities
+		
 		RenderingRegistry.registerEntityRenderingHandler(EntityCyclops.class, new RenderCyclops(new ModelCyclops(), 0.3F));
 	}
 	

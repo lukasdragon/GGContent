@@ -1,5 +1,7 @@
 package net.ggcontent.mod;
 
+import org.apache.logging.log4j.Logger;
+
 import net.ggcontent.mod.blocks.AlabasterOven;
 import net.ggcontent.mod.blocks.BarkBlock;
 import net.ggcontent.mod.blocks.LifeBlock;
@@ -23,6 +25,8 @@ import net.ggcontent.mod.items.LukasShovel;
 import net.ggcontent.mod.items.LukasSword;
 import net.ggcontent.mod.items.MoneyPress;
 import net.ggcontent.mod.items.NCItems;
+import net.ggcontent.mod.items.foodManna;
+import net.ggcontent.mod.items.FoodPutridBall;
 import net.ggcontent.mod.proxy.CommonProxy;
 import net.ggcontent.mod.tileentity.TileEntityAlabasterOven;
 import net.ggcontent.mod.worldgen.GgWorldGen;
@@ -33,6 +37,7 @@ import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.Item.ToolMaterial;
+import net.minecraft.item.ItemFood;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.util.EnumHelper;
 import net.minecraftforge.oredict.OreDictionary;
@@ -132,8 +137,18 @@ public class Ggcontent
     public static Item itemLukasHoe;
     public static Item itemLukasPickaxe;
     
+    
+    //Foods
+    
+    public static Item foodManna;  
+    public static Item foodPutridBall;
+    
+    public static GGConfig         config;
+    
     @SidedProxy(clientSide = "net.ggcontent.mod.proxy.ClientProxy", serverSide = "net.ggcontent.mod.proxy.CommonProxy")
     public static CommonProxy ggProxy;
+    
+    public static Logger logger;
     
     
     @EventHandler
@@ -306,10 +321,22 @@ public class Ggcontent
     	oreAlabasterOre = new OreBlock(Material.rock).setBlockName("AlabasterOre");
     	GameRegistry.registerBlock(oreAlabasterOre, "AlabasterOre");
     	
+    	
+    	//Food
+    	foodManna = new foodManna(8, 0.6F, false).setUnlocalizedName("Manna").setCreativeTab(GGTab).setTextureName(Ggcontent.MODID + ":Manna");
+    	GameRegistry.registerItem(foodManna, "Manna");
+    	
+    	foodPutridBall = new FoodPutridBall(8, 0.6F, false).setUnlocalizedName("PutridBall").setCreativeTab(GGTab).setTextureName(Ggcontent.MODID + ":PutridBall");
+    	GameRegistry.registerItem(foodPutridBall, "PutridBall");
+    	
+    	    	
     	//Renderers
     	ggProxy.registerRenderThings();
-    
+    	   	    	   	
     	
+    	
+    	
+    	      	
     }
     
     @EventHandler

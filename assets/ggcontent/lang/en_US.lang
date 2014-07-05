@@ -42,9 +42,13 @@ tile.LifeBlock.name=§6Life
 tile.BarkBlock.name=Bark Block
 tile.ObsidianTable.name=Obsidian Table
 tile.SoftObsidian.name=Soft Obsidian
+
+
 tile.AlabasterOvenIdle.name=Alabaster Oven
 tile.AlabasterOvenActive.name=Alabaster Oven
+container.alabasterOven=Alabaster Oven
 
+tile.MagicTable.name=Magic Table
 
 
 tile.LukasBlock.name=Block Of Lukas

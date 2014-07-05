@@ -2,7 +2,9 @@ package net.ggcontent.mod.handler;
 
 import net.ggcontent.mod.Ggcontent;
 import net.ggcontent.mod.container.ContainerAlabasterOven;
+import net.ggcontent.mod.container.ContainerMagicTable;
 import net.ggcontent.mod.gui.GuiAlabasterOven;
+import net.ggcontent.mod.gui.GuiMagicTable;
 import net.ggcontent.mod.tileentity.TileEntityAlabasterOven;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.tileentity.TileEntity;
@@ -25,6 +27,11 @@ TileEntity entity = world.getTileEntity(x, y, z);
 			    
 			}
 		}
+		
+		if(ID == Ggcontent.guiIDMagicTable) {
+			return ID == Ggcontent.guiIDMagicTable && world.getBlock(x, y, z) == Ggcontent.blockMagicTable ? new ContainerMagicTable(player.inventory, world, x, y, z) : null;
+		}
+		
 		return null;
 	}
 
@@ -42,6 +49,11 @@ TileEntity entity = world.getTileEntity(x, y, z);
 			    
 			}
 		}
+		if(ID == Ggcontent.guiIDMagicTable) {
+			return ID == Ggcontent.guiIDMagicTable && world.getBlock(x, y, z) == Ggcontent.blockMagicTable ? new GuiMagicTable(player.inventory, world, x, y, z) : null;
+		}
+		
+		
 		return null;
 	}
 

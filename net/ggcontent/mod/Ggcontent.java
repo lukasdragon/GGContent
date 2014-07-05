@@ -5,6 +5,7 @@ import org.apache.logging.log4j.Logger;
 import net.ggcontent.mod.blocks.AlabasterOven;
 import net.ggcontent.mod.blocks.BarkBlock;
 import net.ggcontent.mod.blocks.LifeBlock;
+import net.ggcontent.mod.blocks.MagicTable;
 import net.ggcontent.mod.blocks.MetalBlock;
 import net.ggcontent.mod.blocks.ObsidianBlock;
 import net.ggcontent.mod.blocks.OreBlock;
@@ -123,6 +124,9 @@ public class Ggcontent
     public static Block blockAlabasterOvenIdle;
     public static Block blockAlabasterOvenActive;
     public static final int guiIDalabasterOven = 0;
+    public static Block blockMagicTable;
+    public static final int guiIDMagicTable = 1;
+    
     //Fuels
     public static Item itemTreePitch;
     public static Item itemDiamondCoal;
@@ -143,7 +147,7 @@ public class Ggcontent
     public static Item foodManna;  
     public static Item foodPutridBall;
     
-    public static GGConfig         config;
+   
     
     @SidedProxy(clientSide = "net.ggcontent.mod.proxy.ClientProxy", serverSide = "net.ggcontent.mod.proxy.CommonProxy")
     public static CommonProxy ggProxy;
@@ -290,6 +294,10 @@ public class Ggcontent
     	
     	blockAlabasterOvenActive = new AlabasterOven(true).setBlockName("AlabasterOvenActive").setLightLevel(0.625F).setHardness(3.5F);
     	GameRegistry.registerBlock(blockAlabasterOvenActive, "AlabasterOvenActive");
+    	
+    	
+    	blockMagicTable = new MagicTable().setBlockName("MagicTable");
+    	GameRegistry.registerBlock(blockMagicTable, "MagicTable");
     	
     	//Metal Blocks    	
     	blockLukasBlock = new MetalBlock(Material.iron).setBlockName("LukasBlock");

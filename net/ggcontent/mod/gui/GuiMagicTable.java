@@ -15,7 +15,7 @@ import net.minecraft.world.World;
 
 public class GuiMagicTable extends GuiContainer {
 
-	private ResourceLocation texture = new ResourceLocation(Ggcontent.MODID + ":" + "textures/gui/WorkSurface.png");
+	private ResourceLocation texture = new ResourceLocation(Ggcontent.MODID + ":" + "textures/gui/MagicTable.png");
 
 	public GuiMagicTable(InventoryPlayer invPlayer, World world, int x, int y, int z) {
 		super(new ContainerMagicTable(invPlayer, world, x, y, z));

@@ -53,7 +53,7 @@ public class ContainerMagicTable extends Container {
 
 
 	public void onCraftMatrixChanged(IInventory iiventory) {
-		//craftResult.setInventorySlotContents(0, MagicTableCraftingManager.getInstance().findMatchingRecipe(craftMatrix, worldObj));
+		craftResult.setInventorySlotContents(0, MagicTableCraftingManager.getInstance().findMatchingRecipe(craftMatrix, worldObj));
 	}
 
 
@@ -72,7 +72,7 @@ public class ContainerMagicTable extends Container {
 
         if (!this.worldObj.isRemote)
         {
-            for (int i = 0; i < 9; ++i)
+            for (int i = 0; i < 25; ++i)
             {
                 ItemStack itemstack = this.craftMatrix.getStackInSlotOnClosing(i);
 
@@ -96,28 +96,28 @@ public class ContainerMagicTable extends Container {
 
             if (par2 == 0)
             {
-                if (!this.mergeItemStack(itemstack1, 10, 46, true))
+                if (!this.mergeItemStack(itemstack1, 26, 62, true))
                 {
                     return null;
                 }
 
                 slot.onSlotChange(itemstack1, itemstack);
             }
-            else if (par2 >= 10 && par2 < 37)
+            else if (par2 >= 26 && par2 < 53)
             {
-                if (!this.mergeItemStack(itemstack1, 37, 46, false))
+                if (!this.mergeItemStack(itemstack1, 53, 62, false))
                 {
                     return null;
                 }
             }
-            else if (par2 >= 37 && par2 < 46)
+            else if (par2 >= 53 && par2 < 62)
             {
-                if (!this.mergeItemStack(itemstack1, 10, 37, false))
+                if (!this.mergeItemStack(itemstack1, 26, 53, false))
                 {
                     return null;
                 }
             }
-            else if (!this.mergeItemStack(itemstack1, 10, 46, false))
+            else if (!this.mergeItemStack(itemstack1, 26, 62, false))
             {
                 return null;
             }

@@ -5,6 +5,7 @@ import org.apache.logging.log4j.Logger;
 import net.ggcontent.mod.blocks.AlabasterOven;
 import net.ggcontent.mod.blocks.BarkBlock;
 import net.ggcontent.mod.blocks.LifeBlock;
+import net.ggcontent.mod.blocks.MagicObsidianBlock;
 import net.ggcontent.mod.blocks.MagicTable;
 import net.ggcontent.mod.blocks.MetalBlock;
 import net.ggcontent.mod.blocks.ObsidianBlock;
@@ -16,6 +17,7 @@ import net.ggcontent.mod.handler.CraftingHandler;
 import net.ggcontent.mod.handler.EntityHandler;
 import net.ggcontent.mod.handler.FuelHandler;
 import net.ggcontent.mod.handler.GuiHandler;
+import net.ggcontent.mod.items.AirBottle;
 import net.ggcontent.mod.items.GGRecord;
 import net.ggcontent.mod.items.IronHammer;
 import net.ggcontent.mod.items.IronPunch;
@@ -24,6 +26,7 @@ import net.ggcontent.mod.items.LukasHoe;
 import net.ggcontent.mod.items.LukasPickaxe;
 import net.ggcontent.mod.items.LukasShovel;
 import net.ggcontent.mod.items.LukasSword;
+import net.ggcontent.mod.items.MEssence;
 import net.ggcontent.mod.items.MoneyPress;
 import net.ggcontent.mod.items.NCItems;
 import net.ggcontent.mod.items.foodManna;
@@ -59,7 +62,7 @@ import cpw.mods.fml.relauncher.SideOnly;
 public class Ggcontent
 {
     public static final String MODID = "ggcontent";
-    public static final String VERSION = "ALPHA 6.0";
+    public static final String VERSION = "ALPHA 6.6";
     
     
     GgWorldGen eventWorldGen = new GgWorldGen();
@@ -68,7 +71,7 @@ public class Ggcontent
     
     
     public static CreativeTabs GGTab;
-    public static CreativeTabs GGRecord;
+    public static CreativeTabs GGEssence;
     
     public static ToolMaterial LukasMaterial = EnumHelper.addToolMaterial("LukasMaterial", 2, 500, 8.0F, 2.0F, 14);
     
@@ -94,7 +97,7 @@ public class Ggcontent
     public static Item itemIronCoin;
     public static Item itemGoldDisc;
     public static Item itemGoldCoin;
-    public static Item itemAlabasterIron;
+    public static Item itemAlabasterIron;    
     
     
     //Records
@@ -119,6 +122,7 @@ public class Ggcontent
     public static Block blockBarkBlock;
     public static Block blockObsidianTable;
     public static Block blockSoftObsidianBlock;
+    
     
     //Machines
     public static Block blockAlabasterOvenIdle;
@@ -147,6 +151,19 @@ public class Ggcontent
     public static Item foodManna;  
     public static Item foodPutridBall;
     
+    
+    //GG Essences
+    public static Item itemBaseEssence;
+    public static Item itemEarthEssence;
+    public static Item itemWaterEssence;
+    public static Item itemFireEssence;
+    public static Item itemAirEssence;
+    public static Item itemMagmaEssence;
+    
+    public static Item itemAirBottle;
+    
+    public static Block blockMagicObsidianBlock;
+    
    
     
     @SidedProxy(clientSide = "net.ggcontent.mod.proxy.ClientProxy", serverSide = "net.ggcontent.mod.proxy.CommonProxy")
@@ -170,10 +187,10 @@ public class Ggcontent
     		
     	};
     	
-    	GGRecord = new CreativeTabs("GG Record") {
+    	GGEssence = new CreativeTabs("GG Essence") {
     		@SideOnly(Side.CLIENT)
     		 		public Item getTabIconItem() {
-    			return itemShireRecord;
+    			return Item.getItemFromBlock(blockMagicTable);
     		}
     		
     		
@@ -224,8 +241,8 @@ public class Ggcontent
     	
     	itemGoldDisc = new NCItems().setUnlocalizedName("GoldDisc");
     	GameRegistry.registerItem(itemGoldDisc, "GoldDisc");
-    	
-    	
+    	   	
+    	    	    	
     	itemSpheneCog = new NCItems().setUnlocalizedName("SpheneCog");
     	GameRegistry.registerItem(itemSpheneCog, "SpheneCog");
     	
@@ -288,6 +305,9 @@ public class Ggcontent
     	blockSoftObsidianBlock = new SoftObsidianBlock(Material.rock).setBlockName("SoftObsidian");
     	GameRegistry.registerBlock(blockSoftObsidianBlock, "SoftObsidian");
     	
+    	blockMagicObsidianBlock = new MagicObsidianBlock(Material.rock).setBlockName("MagicObsidian");
+    	GameRegistry.registerBlock(blockMagicObsidianBlock, "MagicObsidian");
+    	
     	//Machines
     	blockAlabasterOvenIdle = new AlabasterOven(false).setBlockName("AlabasterOvenIdle").setCreativeTab(GGTab).setHardness(3.5F);
     	GameRegistry.registerBlock(blockAlabasterOvenIdle, "AlabasterOvenIdle");
@@ -337,7 +357,33 @@ public class Ggcontent
     	foodPutridBall = new FoodPutridBall(8, 0.6F, false).setUnlocalizedName("PutridBall").setCreativeTab(GGTab).setTextureName(Ggcontent.MODID + ":PutridBall");
     	GameRegistry.registerItem(foodPutridBall, "PutridBall");
     	
+    	
+    	//Essences
+    	itemBaseEssence = new MEssence().setUnlocalizedName("BaseEssence");
+    	GameRegistry.registerItem(itemBaseEssence, "BaseEssence");    	
+    	
+    	itemEarthEssence = new MEssence().setUnlocalizedName("EarthEssence");
+    	GameRegistry.registerItem(itemEarthEssence, "EarthEssence");
+    	
+    	itemWaterEssence = new MEssence().setUnlocalizedName("WaterEssence");
+    	GameRegistry.registerItem(itemWaterEssence, "WaterEssence");
+    	
+    	
+    	itemFireEssence = new MEssence().setUnlocalizedName("FireEssence");
+    	GameRegistry.registerItem(itemFireEssence, "FireEssence");
     	    	
+    	
+    	itemAirEssence = new MEssence().setUnlocalizedName("AirEssence");
+    	GameRegistry.registerItem(itemAirEssence, "AirEssence");
+    	
+    	
+    	itemMagmaEssence = new MEssence().setUnlocalizedName("MagmaEssence");
+    	GameRegistry.registerItem(itemMagmaEssence, "MagmaEssence");
+    	
+    	
+    	itemAirBottle = new AirBottle().setUnlocalizedName("AirBottle");
+    	GameRegistry.registerItem(itemAirBottle, "AirBottle");
+    	
     	//Renderers
     	ggProxy.registerRenderThings();
     	   	    	   	
@@ -386,7 +432,12 @@ public class Ggcontent
     	GameRegistry.addShapelessRecipe(new ItemStack(Items.flint_and_steel, 1), new Object[]{Items.flint, itemSteelIngot});
     	GameRegistry.addShapelessRecipe(new ItemStack(blockBarkBlock, 4), new Object[]{Blocks.log, Blocks.log, Blocks.log, Blocks.log});
     	GameRegistry.addShapelessRecipe(new ItemStack(Blocks.log, 4), new Object[]{blockBarkBlock, blockBarkBlock, blockBarkBlock, blockBarkBlock});
+    	GameRegistry.addShapelessRecipe(new ItemStack(Ggcontent.itemAirBottle, 1), new Object[]{Items.glass_bottle});
     	
+    	
+    	GameRegistry.addShapelessRecipe(new ItemStack(blockMagicObsidianBlock, 1), new Object[]{Blocks.obsidian, Blocks.obsidian, Blocks.obsidian, itemBaseEssence});
+    	GameRegistry.addShapelessRecipe(new ItemStack(blockMagicObsidianBlock, 1), new Object[]{blockSoftObsidianBlock, blockSoftObsidianBlock, blockSoftObsidianBlock, itemBaseEssence});
+    	GameRegistry.addRecipe(new ItemStack(blockMagicTable, 1), new Object[]{"DRD", "OEO", "OOO", 'D', Items.diamond, 'R', Items.redstone, 'O', blockMagicObsidianBlock, 'E', itemBaseEssence});
     	
     	//Smelting
     	GameRegistry.addSmelting(oreLukasOre, new ItemStack(itemLukasIngot), 20);

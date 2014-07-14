@@ -1,5 +1,5 @@
 itemGroup.GG Content=§cGG Content
-itemGroup.GG Record=§aGG Records
+itemGroup.GG Essence=§aGG Essence
 
 
 item.LukasIngot.name=Lukas Ingot
@@ -42,6 +42,7 @@ tile.LifeBlock.name=§6Life
 tile.BarkBlock.name=Bark Block
 tile.ObsidianTable.name=Obsidian Table
 tile.SoftObsidian.name=Soft Obsidian
+tile.MagicObsidian.name=Magic Obsidian
 
 
 tile.AlabasterOvenIdle.name=Alabaster Oven
@@ -67,3 +68,12 @@ tile.AlabasterOre.name=Alabaster Ore
 item.Manna.name=Manna
 item.PutridBall.name=§kPutrid Ball
 
+
+item.AirBottle.name=Bottle O' Air
+item.BaseEssence.name=§6Essence
+item.EarthEssence.name=§6Earth Essence
+item.WaterEssence.name=§6Water Essence
+item.FireEssence.name=§6Fire Essence
+item.AirEssence.name=§6Air Essence
+
+item.MagmaEssence.name=§6Magma Essence

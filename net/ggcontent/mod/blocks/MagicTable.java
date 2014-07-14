@@ -17,11 +17,11 @@ public class MagicTable extends Block {
 	private IIcon MagicTableTop;
 
 	public MagicTable() {
-		super(Material.wood);
+		super(Material.ground);
 
 		this.setHardness(3.5F);
 		this.setResistance(5.0F);
-		this.setCreativeTab(Ggcontent.GGTab);
+		this.setCreativeTab(Ggcontent.GGEssence);
 	}
 
 	@SideOnly(Side.CLIENT)

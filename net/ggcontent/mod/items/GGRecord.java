@@ -16,7 +16,7 @@ public class GGRecord extends ItemRecord
 		setUnlocalizedName(name);
 		setTextureName(Ggcontent.MODID + ":" + name);
 		GameRegistry.registerItem(this, name);
-		setCreativeTab(Ggcontent.GGRecord);
+		setCreativeTab(Ggcontent.GGTab);
 		this.title=title;
 	}
 		

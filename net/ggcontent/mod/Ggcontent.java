@@ -16,6 +16,7 @@ import net.ggcontent.mod.entity.EntityCyclops;
 import net.ggcontent.mod.handler.CraftingHandler;
 import net.ggcontent.mod.handler.EntityHandler;
 import net.ggcontent.mod.handler.FuelHandler;
+import net.ggcontent.mod.handler.GGEventHandler;
 import net.ggcontent.mod.handler.GuiHandler;
 import net.ggcontent.mod.items.AirBottle;
 import net.ggcontent.mod.items.GGRecord;
@@ -43,6 +44,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.Item.ToolMaterial;
 import net.minecraft.item.ItemFood;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.util.EnumHelper;
 import net.minecraftforge.oredict.OreDictionary;
 import cpw.mods.fml.common.FMLCommonHandler;
@@ -62,7 +64,7 @@ import cpw.mods.fml.relauncher.SideOnly;
 public class Ggcontent
 {
     public static final String MODID = "ggcontent";
-    public static final String VERSION = "ALPHA 6.6";
+    public static final String VERSION = "ALPHA 6.7";
     
     
     GgWorldGen eventWorldGen = new GgWorldGen();
@@ -461,6 +463,9 @@ public class Ggcontent
     	
     	//Entities
     	EntityHandler.registerMonsters(EntityCyclops.class, "Cyclops");
+    	
+    	//Event Handler
+    	MinecraftForge.EVENT_BUS.register(new GGEventHandler());
     	
     	
     	

@@ -58,7 +58,7 @@ public class MagicTableCraftingManager
     	 this.addRecipe(new ItemStack(Ggcontent.itemAirEssence, 1), new Object[] {"E", "A", 'E', Ggcontent.itemBaseEssence, 'A', Ggcontent.itemAirBottle});
     	 this.addRecipe(new ItemStack(Ggcontent.itemMagmaEssence, 1), new Object[] {"E", "F", 'E', Ggcontent.itemEarthEssence, 'F', Ggcontent.itemFireEssence});
     	 this.addRecipe(new ItemStack(Blocks.obsidian, 1), new Object[] {"WW", "MM", 'W', Ggcontent.itemWaterEssence, 'M', Ggcontent.itemMagmaEssence});
-    	 
+    	 this.addRecipe(new ItemStack(Blocks.stone, 4), new Object[] {"MM", "WW", 'W', Ggcontent.itemWaterEssence, 'M', Ggcontent.itemMagmaEssence});
     	 
     	 
         

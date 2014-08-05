@@ -16,21 +16,14 @@ buildscript {
 }
 
 apply plugin: 'forge'
-apply plugin: 'java'
-
-sourceCompatibility = "1.7"
-targetCompatibility = "1.7"
-
 
 version = "6.7"
 group= "net.ggcontent.mod" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
-archivesBaseName = "[" + project.minecraft.version + "]Gamer Group Content"
+archivesBaseName = "modid"
 
 minecraft {
-    version = "1.7.10-10.13.0.1190"
-	runDir = "Build"
-	replace "@VERSION@", project.version
-	replace "@BUILD@", "@Not_Build@"
+    version = "1.7.10-10.13.0.1180"
+    assetDir = "eclipse/assets"
 }
 
 dependencies {
@@ -67,4 +60,4 @@ processResources
     from(sourceSets.main.resources.srcDirs) {
         exclude 'mcmod.info'
     }
-}
+	}

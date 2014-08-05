@@ -1,9 +1,13 @@
 package net.ggcontent.mod.TechItems;
 
+import java.util.Random;
+
 import net.ggcontent.mod.Ggcontent;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Blocks;
+import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
@@ -18,17 +22,18 @@ public class CrateMask extends Item{
 				this.setCreativeTab(null);
 	}
 	
-	@SideOnly(Side.CLIENT)
-	public void registerIcons(IIconRegister iconRegister){
-		this.itemIcon = iconRegister.registerIcon(Ggcontent.MODID + ":" + this.getUnlocalizedName().substring(5));
-	}
-	
-	public void onCreated(ItemStack itemstack, World world, EntityPlayer entityplayer) {
-		public void onUpdate(ItemStack p_77663_1_, World p_77663_2_, Entity p_77663_3_, int p_77663_4_, boolean p_77663_5_) {}
-		 itemstack.stacksize
-		if(entity instanceof Entityplayer){
-		   player.inventory.addItemStackToInventoryplayer.inventory.addItemStackToInventory(new ItemStack(randomItems[rand.nextInt(randomItems.length())]));
-	}
+	 private static final Item[] randomItems = new Item[] {Items.apple, Item.getItemFromBlock(Blocks.stone)};
+	 @Override
+	 public void onUpdate(ItemStack itemstack, World world, Entity entity, int p_77663_4_, boolean inHand) {
+	  if(world.isRemote && entity instanceof EntityPlayer){
+	   EntityPlayer player = (EntityPlayer)entity;
+	   Random rand = new Random();
+	   itemstack.stackSize--;
+	   player.inventory.addItemStackToInventory(new ItemStack(randomItems[rand.nextInt(randomItems.length)]));
+	  }
+	  else super.onUpdate(itemstack, world, entity, p_77663_4_, inHand);
+	 }
+
 	
 	
 }

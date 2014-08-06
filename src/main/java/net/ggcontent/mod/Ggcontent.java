@@ -489,6 +489,7 @@ public class Ggcontent
     	
     	
     	GameRegistry.addShapelessRecipe(new ItemStack(blockMagicObsidianBlock, 1), new Object[]{Blocks.obsidian, Blocks.obsidian, Blocks.obsidian, itemBaseEssence});
+    	GameRegistry.addShapelessRecipe(new ItemStack(itemCrateMask, 1), new Object[]{Blocks.dirt});
     	GameRegistry.addShapelessRecipe(new ItemStack(blockMagicObsidianBlock, 1), new Object[]{blockSoftObsidianBlock, blockSoftObsidianBlock, blockSoftObsidianBlock, itemBaseEssence});
     	GameRegistry.addRecipe(new ItemStack(blockMagicTable, 1), new Object[]{"DRD", "OEO", "OOO", 'D', Items.diamond, 'R', Items.redstone, 'O', blockMagicObsidianBlock, 'E', itemBaseEssence});
     	

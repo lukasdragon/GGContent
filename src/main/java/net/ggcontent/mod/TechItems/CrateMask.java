@@ -25,13 +25,14 @@ public class CrateMask extends Item{
 	 private static final Item[] randomItems = new Item[] {Items.apple, Item.getItemFromBlock(Blocks.stone)};
 	 @Override
 	 public void onUpdate(ItemStack itemstack, World world, Entity entity, int p_77663_4_, boolean inHand) {
-	  if(world.isRemote && entity instanceof EntityPlayer){
-	   EntityPlayer player = (EntityPlayer)entity;
-	   Random rand = new Random();
-	   itemstack.stackSize--;
-	   player.inventory.addItemStackToInventory(new ItemStack(randomItems[rand.nextInt(randomItems.length)]));
-	  }
-	  else super.onUpdate(itemstack, world, entity, p_77663_4_, inHand);
+
+	 if(!world.isRemote && entity instanceof EntityPlayer){
+	 EntityPlayer player = (EntityPlayer)entity;
+	 Random rand = new Random();
+	 itemstack.stackSize--;
+	 player.inventory.addItemStackToInventory(new ItemStack(randomItems[rand.nextInt(randomItems.length)]));
+	 }
+	 super.onUpdate(itemstack, world, entity, p_77663_4_, inHand);
 	 }
 
 	

@@ -19,7 +19,7 @@ apply plugin: 'forge'
 
 version = "6.7"
 group= "net.ggcontent.mod" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
-archivesBaseName = "[" + project.minecraft.version + "]GGContent"
+archivesBaseName = "GGContent"
 
 minecraft {
     version = "1.7.10-10.13.0.1180"

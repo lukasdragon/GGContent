@@ -6,6 +6,7 @@ import cpw.mods.fml.common.FMLCommonHandler;
 import net.ggcontent.mod.Ggcontent;
 import net.ggcontent.mod.entity.EntityCyclops;
 import net.ggcontent.mod.entity.EntityGnome;
+import net.ggcontent.mod.helpers.CapeHelper;
 import net.ggcontent.mod.model.ModelCyclops;
 import net.ggcontent.mod.model.ModelGnome;
 import net.ggcontent.mod.renderer.ItemRenderObsidianTable;
@@ -32,9 +33,15 @@ public class ClientProxy extends CommonProxy {
 		
 		RenderingRegistry.registerEntityRenderingHandler(EntityCyclops.class, new RenderCyclops(new ModelCyclops(), 0.3F));
 		RenderingRegistry.registerEntityRenderingHandler(EntityGnome.class, new RenderGnome(new ModelGnome(), 0.3F));
+				
 	}
 	
 	public void registerTileEntitySpecialRenderer() {
 		
 	}
+	public void addCapes() {
+		super.addCapes();
+		CapeHelper.addCapeToPlayer("lukasdragon", null, null);
+		CapeHelper.addCapeToPlayer("flamegabriel", null, null);
+		}
 }

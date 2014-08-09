@@ -1,13 +1,21 @@
 package net.ggcontent.mod;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.ArrayList;
+
 import org.apache.logging.log4j.Logger;
 
 import net.ggcontent.mod.MobHandlers.CyclopsHandler;
 import net.ggcontent.mod.MobHandlers.CreatureHandler;
-import net.ggcontent.mod.TechItems.CrateMask;
+import net.ggcontent.mod.TechItems.CrateMaskOne;
 import net.ggcontent.mod.armor.FlightArmor;
 import net.ggcontent.mod.blocks.AlabasterOven;
 import net.ggcontent.mod.blocks.BarkBlock;
+import net.ggcontent.mod.blocks.CrateBlock;
 import net.ggcontent.mod.blocks.LifeBlock;
 import net.ggcontent.mod.blocks.MagicObsidianBlock;
 import net.ggcontent.mod.blocks.MagicTable;
@@ -23,6 +31,7 @@ import net.ggcontent.mod.handler.FuelHandler;
 import net.ggcontent.mod.handler.GGEventHandler;
 import net.ggcontent.mod.handler.GuiHandler;
 import net.ggcontent.mod.items.AirBottle;
+import net.ggcontent.mod.items.CrateKey;
 import net.ggcontent.mod.items.GGRecord;
 import net.ggcontent.mod.items.InfiniSword;
 import net.ggcontent.mod.items.IronHammer;
@@ -55,6 +64,7 @@ import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.util.EnumHelper;
 import net.minecraftforge.oredict.OreDictionary;
 import cpw.mods.fml.common.FMLCommonHandler;
+import cpw.mods.fml.common.FMLLog;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.Mod.Instance;
@@ -71,20 +81,19 @@ import cpw.mods.fml.relauncher.SideOnly;
 public class Ggcontent
 {
     public static final String MODID = "ggcontent";
-    public static final String VERSION = "ALPHA 6.7";
+    public static final String VERSION = "ALPHA 6.7";    
     
-    
-    GgWorldGen eventWorldGen = new GgWorldGen();
-    
-    
-    
+    GgWorldGen eventWorldGen = new GgWorldGen();        
     
     public static CreativeTabs GGTab;
     public static CreativeTabs GGEssence;
     
     public static ToolMaterial LukasMaterial = EnumHelper.addToolMaterial("LukasMaterial", 2, 500, 8.0F, 2.0F, 14);
     public static ToolMaterial GodMaterial = EnumHelper.addToolMaterial("GodMaterial", 40, 9000, 10.0F, 3.0F, 30);
-    public static ArmorMaterial FlightArmorMaterial = EnumHelper.addArmorMaterial("FlightArmorMaterial", 25, new int[] {2, 6, 5, 2}, 25);
+    public static ArmorMaterial FlightArmorMaterial = EnumHelper.addArmorMaterial("FlightArmorMaterial", 25, new int[] {2, 6, 5, 2}, 25);   
+    
+    public static ArrayList<String> developers = new ArrayList();
+    public static ArrayList<String> donators = new ArrayList();
     
     @Instance(MODID)
     public static Ggcontent instance;
@@ -111,8 +120,7 @@ public class Ggcontent
     public static Item itemAlabasterIron;    
     
     
-    //Records
-    public static Item itemShireRecord;
+    //Records    
     public static Item itemMiracleRecord;   
     public static Item itemGabenRecord;
     
@@ -132,7 +140,7 @@ public class Ggcontent
     public static Block blockLifeBlock;  
     public static Block blockBarkBlock;
     public static Block blockObsidianTable;
-    public static Block blockSoftObsidianBlock;
+    public static Block blockSoftObsidianBlock;    
     
     
     //Machines
@@ -141,6 +149,7 @@ public class Ggcontent
     public static final int guiIDalabasterOven = 0;
     public static Block blockMagicTable;
     public static final int guiIDMagicTable = 1;
+	public static final String helpful = null;
     
     //Fuels
     public static Item itemTreePitch;
@@ -155,6 +164,12 @@ public class Ggcontent
     public static Item itemLukasShovel;
     public static Item itemLukasHoe;
     public static Item itemLukasPickaxe;
+    
+    //Crates
+    public static Block blockCrateOne;
+    public static Item itemCrateKey;
+    
+  
     
     //Private
     public static Item itemStingerSword;
@@ -186,7 +201,7 @@ public class Ggcontent
     public static Item itemMagmaEssence;
     
     //Technical
-    public static Item itemCrateMask;
+    public static Item itemCrateMaskOne;
     
     public static Item itemAirBottle;
     
@@ -196,8 +211,8 @@ public class Ggcontent
     
     @SidedProxy(clientSide = "net.ggcontent.mod.proxy.ClientProxy", serverSide = "net.ggcontent.mod.proxy.CommonProxy")
     public static CommonProxy ggProxy;
-    
-    public static Logger logger;
+        
+	
     
     
     @EventHandler
@@ -276,10 +291,7 @@ public class Ggcontent
     	
     	//Records    	
     	itemMiracleRecord = new GGRecord("miracleDisc", "Patti LaBelle - Are You Ready For A Miracle?");  
-
-    	itemShireRecord = new GGRecord("shireDisc", "Lukas Olson - Shire Remix");   
-    	
-    	
+   	      	
     	itemGabenRecord = new GGRecord("gabenDisc", "Mastgrr - Stop A Gaben"); 
     	
     	
@@ -434,8 +446,16 @@ public class Ggcontent
     	GameRegistry.registerItem(itemAirBottle, "AirBottle");
     	
     	//Technical
-    	itemCrateMask = new CrateMask().setUnlocalizedName("CrateMask");
-    	GameRegistry.registerItem(itemCrateMask, "CrateMask");
+    	itemCrateMaskOne = new CrateMaskOne().setUnlocalizedName("CrateMaskOne");
+    	GameRegistry.registerItem(itemCrateMaskOne, "CrateMaskOne");
+    	
+    	//Crates & Keys
+    	itemCrateKey = new CrateKey().setUnlocalizedName("CrateKey");
+    	GameRegistry.registerItem(itemCrateKey, "CrateKey");
+    	
+    	blockCrateOne = new CrateBlock(Material.wood).setBlockName("CrateOne");
+    	GameRegistry.registerBlock(blockCrateOne, "CrateOne");
+    
     	
     	//Renderers
     	ggProxy.registerRenderThings();
@@ -489,7 +509,7 @@ public class Ggcontent
     	
     	
     	GameRegistry.addShapelessRecipe(new ItemStack(blockMagicObsidianBlock, 1), new Object[]{Blocks.obsidian, Blocks.obsidian, Blocks.obsidian, itemBaseEssence});
-    	GameRegistry.addShapelessRecipe(new ItemStack(itemCrateMask, 1), new Object[]{Blocks.dirt});
+    	GameRegistry.addShapelessRecipe(new ItemStack(itemCrateMaskOne, 1), new Object[]{Blocks.dirt});
     	GameRegistry.addShapelessRecipe(new ItemStack(blockMagicObsidianBlock, 1), new Object[]{blockSoftObsidianBlock, blockSoftObsidianBlock, blockSoftObsidianBlock, itemBaseEssence});
     	GameRegistry.addRecipe(new ItemStack(blockMagicTable, 1), new Object[]{"DRD", "OEO", "OOO", 'D', Items.diamond, 'R', Items.redstone, 'O', blockMagicObsidianBlock, 'E', itemBaseEssence});
     	
@@ -526,14 +546,33 @@ public class Ggcontent
     }
     
     @EventHandler
-    public void PostInit(FMLPostInitializationEvent postEvent){   	
-    	
-    	
-    	
-    	
-    	    }
-    
+    public void PostInit(FMLPostInitializationEvent postEvent){   	 	
+    	//net.ggcontent.mod.proxy.ClientProxy.addCapes();    	    	
+              
+         readListFromUrl("Developer List", developers, "your direct link"); 
     }
     
+    /**
+     * Loads a list from a url
+     */
+    private void readListFromUrl(String name, ArrayList<String> list, String urlString)
+    {
+    	try {     
+    		URL url = new URL(urlString);
+    		BufferedReader in = new BufferedReader(new InputStreamReader(url.openStream()));
+    		String donatorlist;
+    		while ((donatorlist = in.readLine()) != null){
+    			donators.add(donatorlist);     
+    		}
+    		FMLLog.getLogger().info("[" + MODID + "] Read " + name + " from " + url + " : " + donators.toString());        
 
-
+    		in.close();
+    	}
+    	catch (MalformedURLException e){
+    		FMLLog.getLogger().info("[" + MODID + "] Couldn't read " + name + " from url. MalformedURLException");
+    	}
+    	catch (IOException e){
+    		FMLLog.getLogger().info("[" + MODID + "] Couldn't read " + name + " from url. IOException");
+    	}
+    }
+}

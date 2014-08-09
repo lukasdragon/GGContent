@@ -9,4 +9,9 @@ public class CommonProxy {
 	public void registerTileEntitySpecialRenderer() {
 		
 	}
+
+	public void addCapes() {
+		// TODO Auto-generated method stub
+		
+	}
 }

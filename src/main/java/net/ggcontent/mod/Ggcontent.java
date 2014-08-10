@@ -276,10 +276,7 @@ public class Ggcontent
     	
     	//Records    	
     	itemMiracleRecord = new GGRecord("miracleDisc", "Patti LaBelle - Are You Ready For A Miracle?");  
-
-    	itemShireRecord = new GGRecord("shireDisc", "Lukas Olson - Shire Remix");   
-    	
-    	
+  	     	
     	itemGabenRecord = new GGRecord("gabenDisc", "Mastgrr - Stop A Gaben"); 
     	
     	

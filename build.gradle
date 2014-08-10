@@ -17,7 +17,7 @@ buildscript {
 
 apply plugin: 'forge'
 
-version = "6.8"
+version = "6.7"
 group= "net.ggcontent.mod" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = "GGContent"
 

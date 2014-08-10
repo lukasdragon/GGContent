@@ -1,4 +1,13 @@
-{  
+{
+  "shire": {
+    "category": "record",
+    "sounds": [
+      {
+        "name": "records/shire",
+        "stream": true
+      }
+    ]
+  },
   "miracle": {
     "category": "record",
     "sounds": [

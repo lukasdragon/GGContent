@@ -9,7 +9,7 @@
   "updateUrl": "",
   "authors": [ "LukasDragon" ],
   "credits": "",
-  "logoFile": "logo.png",
+  "logoFile": "/assets/ggcontent/logo.png",
   "screenshots": [],
   "dependencies": []
 }

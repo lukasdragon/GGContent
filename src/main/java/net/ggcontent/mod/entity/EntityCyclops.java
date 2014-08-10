@@ -92,11 +92,13 @@ public class EntityCyclops extends EntityMob{
     {
         switch (this.rand.nextInt(3))
         {
-            
             case 0:
-                this.dropItem(Ggcontent.itemMiracleRecord, 1);
+                this.dropItem(Ggcontent.itemShireRecord, 1);
                 break;
             case 1:
+                this.dropItem(Ggcontent.itemMiracleRecord, 1);
+                break;
+            case 2:
                 this.dropItem(Ggcontent.itemGabenRecord, 1);
         }
     }

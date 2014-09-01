@@ -35,6 +35,7 @@ public class CrateMask extends Item{
 	 super.onUpdate(itemstack, world, entity, p_77663_4_, inHand);
 	 }
 
+
 	
 	
 }

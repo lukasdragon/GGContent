@@ -8,6 +8,7 @@ import net.ggcontent.mod.TechItems.CrateMask;
 import net.ggcontent.mod.armor.FlightArmor;
 import net.ggcontent.mod.blocks.AlabasterOven;
 import net.ggcontent.mod.blocks.BarkBlock;
+import net.ggcontent.mod.blocks.GGCrop;
 import net.ggcontent.mod.blocks.LifeBlock;
 import net.ggcontent.mod.blocks.MagicObsidianBlock;
 import net.ggcontent.mod.blocks.MagicTable;
@@ -23,6 +24,7 @@ import net.ggcontent.mod.handler.FuelHandler;
 import net.ggcontent.mod.handler.GGEventHandler;
 import net.ggcontent.mod.handler.GuiHandler;
 import net.ggcontent.mod.items.AirBottle;
+import net.ggcontent.mod.items.DiamondShard;
 import net.ggcontent.mod.items.GGRecord;
 import net.ggcontent.mod.items.InfiniSword;
 import net.ggcontent.mod.items.IronHammer;
@@ -50,6 +52,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.Item.ToolMaterial;
 import net.minecraft.item.ItemArmor.ArmorMaterial;
 import net.minecraft.item.ItemFood;
+import net.minecraft.item.ItemSeeds;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.util.EnumHelper;
@@ -125,6 +128,7 @@ public class Ggcontent
     public static Block oreStibniteOre;
     public static Block oreGodOre;
     public static Block oreAlabasterOre;
+    public static Block oreNiobiumNetherOre;
     
     //Blocks
     public static Block blockLukasBlock;
@@ -177,6 +181,12 @@ public class Ggcontent
     public static Item foodPutridBall;
     
     
+    //Crops
+    public static Item cropDiamondSeeds;
+    public static Item cropDiamondShard;
+    public static Block cropDiamondPlant;
+    
+    
     //GG Essences
     public static Item itemBaseEssence;
     public static Item itemEarthEssence;
@@ -223,7 +233,17 @@ public class Ggcontent
     		
     		
     	};
-    	    	
+    	//Crops
+    	cropDiamondPlant = new GGCrop().setBlockName("DiamondPlant");
+    	GameRegistry.registerBlock(cropDiamondPlant, "DiamondPlant");
+    	
+    	cropDiamondSeeds = new ItemSeeds(cropDiamondPlant, Blocks.farmland).setUnlocalizedName("DiamondSeeds").setTextureName(MODID + ":DiamondSeeds").setCreativeTab(GGTab);
+    	GameRegistry.registerItem(cropDiamondSeeds, "DiamondSeeds");
+    	
+    	cropDiamondShard = new DiamondShard().setUnlocalizedName("DiamondShard");
+    	GameRegistry.registerItem(cropDiamondShard, "DiamondShard"); 
+   
+    	
 	   //Ingot    	
     	itemLukasIngot = new NCItems().setUnlocalizedName("LukasIngot");
     	GameRegistry.registerItem(itemLukasIngot, "LukasIngot");
@@ -383,6 +403,9 @@ public class Ggcontent
     	oreNiobiumOre = new OreBlock(Material.rock).setBlockName("NiobiumOre");
     	GameRegistry.registerBlock(oreNiobiumOre, "NiobiumOre");
     	
+    	oreNiobiumNetherOre = new OreBlock(Material.rock).setBlockName("NiobiumNetherOre");
+    	GameRegistry.registerBlock(oreNiobiumNetherOre, "NiobiumNetherOre");
+    	
     	oreSpheneOre = new OreBlock(Material.rock).setBlockName("SpheneOre");
     	GameRegistry.registerBlock(oreSpheneOre, "SpheneOre");
 
@@ -494,6 +517,7 @@ public class Ggcontent
     	GameRegistry.addSmelting(oreLukasOre, new ItemStack(itemLukasIngot), 20);
     	GameRegistry.addSmelting(oreSpheneOre, new ItemStack(itemSpheneIngot), 20);
     	GameRegistry.addSmelting(oreNiobiumOre, new ItemStack(itemNiobiumIngot), 20);
+    	GameRegistry.addSmelting(oreNiobiumNetherOre, new ItemStack(itemNiobiumIngot, 2), 20);
     	GameRegistry.addSmelting(oreAkermaniteOre, new ItemStack(itemAkermaniteIngot), 20);
     	GameRegistry.addSmelting(oreStibniteOre, new ItemStack(itemStibniteIngot), 20);
     	GameRegistry.addSmelting(oreAlabasterOre, new ItemStack(itemAlabasterGem), 20);

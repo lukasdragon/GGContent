@@ -64,6 +64,8 @@ tile.StibniteOre.name=Stibnite Ore
 tile.GodOre.name=§6Godly Stone
 tile.AlabasterOre.name=Alabaster Ore
 
+tile.NiobiumNetherOre=Niobium Ore
+
 
 item.Manna.name=Manna
 item.PutridBall.name=§kPutrid Ball
@@ -88,3 +90,7 @@ item.FlightHelm.name=Helmet Of Flight
 item.FlightChest.name=Chestplate Of Flight
 item.FlightLegs.name=Leggings Of Flight
 item.FlightBoots.name=Boots Of Flight
+
+tile.DiamondPlant.name=Diamond Plant
+item.DiamondShard.name=Diamond Shard
+item.DiamondSeeds.name=Diamond Seeds
